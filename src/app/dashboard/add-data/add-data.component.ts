@@ -1,32 +1,58 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedModule } from '../../shared/shared.module';
-import { Validators, FormBuilder } from '@angular/forms';
-import { StoreService } from '../../shared/store.service';
-import { BackendService } from '../../shared/backend.service';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {BackendService} from "../../shared/backend.service";
+import {StoreService} from "../../shared/store.service";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+
 
 @Component({
   selector: 'app-add-data',
-  standalone: true,
-  imports: [SharedModule],
   templateUrl: './add-data.component.html',
-  styleUrls: ['./add-data.component.css']
+  styleUrls: ['./add-data.component.css'],
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatCheckboxModule
+  ]
 })
 export class AddDataComponent implements OnInit {
-  constructor(private formbuilder: FormBuilder, public storeService: StoreService, private backendService: BackendService) {
-  }
-  public registrationForm: any;
+  public registrationForm!: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    public storeService: StoreService,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit(): void {
-    this.registrationForm = this.formbuilder.group({
-      name: ['', [Validators.required]],
+    this.registrationForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      birthdate: ['', Validators.required],
       courseId: ['', Validators.required],
-      birthdate: [null, Validators.required]
-    })
+      newsletter: [false], // Standardmäßig nicht abonniert
+    });
   }
 
-  onSubmit() {
-    if(this.registrationForm.valid) {
-      this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
+  onSubmit(): void {
+    if (this.registrationForm.valid) {
+      const registrationData = this.registrationForm.value;
+
+      // Überprüfen, ob der Benutzer den Newsletter abonniert hat
+      if (registrationData.newsletter) {
+        console.log('Benutzer hat den Newsletter abonniert.');
+      }
+
+      // Sende die Daten an den Backend-Service
+      this.backendService.addRegistration(
+        registrationData,
+        this.storeService.currentPage
+      );
     }
   }
 }

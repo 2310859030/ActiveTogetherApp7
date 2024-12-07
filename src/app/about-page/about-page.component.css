@@ -1,0 +1,52 @@
+.about-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Einleitungstext */
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: darkgreen;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Kursbeschreibungen */
+.courses {
+  margin-bottom: 30px;
+}
+
+.courses h2 {
+  font-size: 3rem;
+  color: darkgreen;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.course {
+  margin-bottom: 20px;
+}
+
+.course h3 {
+  font-size: 1.5rem;
+  color: darkgreen;
+  margin-bottom: 10px;
+}
+
+.course p {
+  font-size: 1.2px;
+  color: #555;
+}

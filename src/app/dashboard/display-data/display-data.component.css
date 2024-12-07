@@ -1,6 +1,6 @@
 /* Allgemeiner Stil für den Tabellencontainer */
 .table-container {
-  max-width: 1400px; /* Maximale Breite der Tabelle */
+  width: 100%; /* Maximale Breite der Tabelle */
   margin: 20px auto; /* Zentriere die Tabelle */
   padding: 20px;
   border: 1px solid #ccc; /* Grauer Rahmen */

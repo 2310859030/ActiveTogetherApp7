@@ -1,31 +1,41 @@
-<div class="table-container">
-  <h2>Angemeldete Teilnehmer</h2>
-  <table>
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Geburtsdatum</th>
-      <th>Kurs</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let registration of storeService.registrations">
-      <td>{{ registration.name }}</td>
-      <td>{{ registration.birthdate }}</td>
-      <td>{{ registration.course.name }}</td>
-    </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <h2 class="text-center">Angemeldete Teilnehmer</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Geburtsdatum</th>
+            <th>Kurs</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let registration of storeService.registrations">
+            <td>{{ registration.name }}</td>
+            <td>{{ registration.birthdate }}</td>
+            <td>{{ registration.course.name }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
 
-  <!-- Pagination -->
-  <div class="pagination">
-    <button
-      [ngClass]="page === storeService.currentPage ? 'active' : ''"
-      (click)="selectPage(page)"
-      *ngFor="let page of returnAllPages()"
-      [disabled]="page === storeService.currentPage"
-    >
-      {{ page }}
-    </button>
+      <!-- Pagination -->
+      <div class="pagination text-center mt-3">
+        <button
+          class="btn"
+          [ngClass]="{
+            'active btn-warning': page === storeService.currentPage,
+            'btn-primary': page !== storeService.currentPage
+          }"
+          (click)="selectPage(page)"
+          *ngFor="let page of returnAllPages()"
+          [disabled]="page === storeService.currentPage"
+        >
+          {{ page }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,23 +1,17 @@
 <div class="header-container">
   <h1 class="header-title">{{ title }}</h1>
-  <div class="header-image" [style.backgroundImage]="'url(' + imagePath + ')'"></div>
-  <div class="nav-links">
-    <!-- Dashboard-Button -->
-    <a
-      [routerLink]="'/dashboard'"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      Dashboard
-    </a>
 
-    <!-- About-Button -->
-    <a
-      [routerLink]="'/about'"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      About
+  <div class="header-image" [style.backgroundImage]="'url(' + imagePath + ')'"></div>
+
+  <div class="nav-links">
+    <a [routerLink]="'/about'"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: true }">About
+    </a>
+    <a [routerLink]="'/dashboard'"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: true }">Dashboard
     </a>
   </div>
+
 </div>

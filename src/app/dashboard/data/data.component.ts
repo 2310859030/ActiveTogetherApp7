@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddDataComponent } from '../add-data/add-data.component';
+
 import { SharedModule } from '../../shared/shared.module';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
@@ -7,7 +7,7 @@ import { BackendService } from '../../shared/backend.service';
 @Component({
   selector: 'app-data',
   standalone: true,
-  imports: [SharedModule, AddDataComponent],
+  imports: [SharedModule],
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
