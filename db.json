@@ -87,6 +87,12 @@
       "courseId": "_iL775a",
       "birthdate": "1995-02-23",
       "id": 3
+    },
+    {
+      "name": "Nina Test",
+      "courseId": "_iL775i",
+      "birthdate": "2024-12-19",
+      "id": 4
     }
   ]
 }

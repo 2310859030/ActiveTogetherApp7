@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import { AddDataComponent } from '../add-data/add-data.component';
-import { SharedModule } from '../../shared/shared.module';
+import { NgClass, NgForOf } from '@angular/common';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
 
 @Component({
-  selector: 'app-data',
+  selector: 'app-display-data',
+  templateUrl: './display-data.component.html',
+  styleUrls: ['./display-data.component.css'],
   standalone: true,
-  imports: [SharedModule, AddDataComponent],
-  templateUrl: './data.component.html',
-  styleUrls: ['./data.component.css']
+  imports: [NgClass, NgForOf], // Wichtige Angular-Direktiven importieren
 })
-export class DataComponent {
-
+export class DisplayDataComponent {
   constructor(public storeService: StoreService, private backendService: BackendService) {}
 
   public page: number = 0;

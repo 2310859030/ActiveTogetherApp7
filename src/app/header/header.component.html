@@ -1,6 +1,23 @@
-<div>
-    <h1>{{ title }}</h1>
-    <img src={{imagePath}}>&nbsp;&nbsp;
-    <a [routerLink]="['/dashboard']">Dashboard</a>&nbsp;&nbsp;
-    <a [routerLink]="['/about']">About</a>
+<div class="header-container">
+  <h1 class="header-title">{{ title }}</h1>
+  <div class="header-image" [style.backgroundImage]="'url(' + imagePath + ')'"></div>
+  <div class="nav-links">
+    <!-- Dashboard-Button -->
+    <a
+      [routerLink]="'/dashboard'"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Dashboard
+    </a>
+
+    <!-- About-Button -->
+    <a
+      [routerLink]="'/about'"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      About
+    </a>
+  </div>
 </div>

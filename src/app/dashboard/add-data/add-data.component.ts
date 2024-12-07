@@ -3,10 +3,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { Validators, FormBuilder } from '@angular/forms';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
+
 @Component({
   selector: 'app-add-data',
-  standalone: true,  // standalone-Komponente
-  imports: [SharedModule],  // Import der benötigten Module
+  standalone: true,
+  imports: [SharedModule],
   templateUrl: './add-data.component.html',
   styleUrls: ['./add-data.component.css']
 })

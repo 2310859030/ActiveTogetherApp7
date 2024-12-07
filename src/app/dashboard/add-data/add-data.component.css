@@ -1,0 +1,104 @@
+.form-container {
+  max-width: 1200px; /* Breite der Kurstabelle */
+  margin: 20px auto; /* Zentriert das Formular horizontal */
+  padding: 20px;
+  border: 1px solid #ccc; /* Grauer Rahmen */
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  background-color: #f9f9f9; /* Weißer Hintergrund */
+}
+
+.form-container h2 {
+  text-align: center; /* Überschrift zentrieren */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px; /* Abstand zwischen den Feldern */
+}
+
+.form-group label {
+  display: block; /* Label über das Eingabefeld */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%; /* Volle Breite des Formularfelds */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Abgerundete Ecken */
+  font-size: 1rem;
+  box-sizing: border-box; /* Padding einbeziehen */
+}
+
+.form-group button {
+  width: 100%; /* Button in voller Breite */
+  padding: 10px;
+  background-color: #007bff; /* Blau wie ein typischer Button */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-group button:hover {
+  background-color: green; /* Dunkleres Blau beim Hover */
+}
+
+/* Container für Kursanmeldung und Tabelle */
+.content-container {
+  display: flex; /* Flexbox für horizontale Anordnung */
+  justify-content: space-between; /* Abstand zwischen den Elementen */
+  align-items: flex-start; /* Obere Ausrichtung der Inhalte */
+  gap: 20px; /* Abstand zwischen Anmeldung und Tabelle */
+  margin: 20px auto; /* Zentrierung und Abstand nach oben/unten */
+  max-width: 1200px; /* Maximale Breite */
+}
+
+/* Formular-Stil */
+.form-container {
+  flex: 1; /* Formular nimmt gleichmäßig Platz ein */
+  max-width: 400px; /* Begrenzte Breite */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabellen-Stil */
+.table-container {
+  flex: 2; /* Tabelle nimmt doppelt so viel Platz wie das Formular ein */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Horizontal scrollen bei kleinen Bildschirmen */
+  padding: 20px;
+}
+
+table {
+  width: 100%; /* Volle Breite */
+  border-collapse: collapse; /* Rahmen zusammenführen */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd; /* Zarte Rahmen */
+  text-align: left;
+}
+
+th {
+  background-color: #007bff; /* Blaue Kopfzeile */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alternierende Zeilenfarben */
+}
+

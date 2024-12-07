@@ -27,7 +27,7 @@ table {
 }
 
 table th {
-  background-color: darkgreen; /* Blaue Kopfzeile */
+  background-color: darkgreen; /* Grüne Kopfzeile */
   color: white;
   padding: 10px;
   text-align: left;
@@ -47,40 +47,40 @@ table tr:nth-child(even) {
 table tr:hover {
   background-color: #e9e9e9; /* Hover-Effekt */
 }
+.pagination {
+  margin-top: 10px;
+  text-align: center;
+}
 
-/* Allgemeiner Stil für Pagination-Buttons */
-button {
-  border: 1px solid #007bff; /* Blauer Rand */
-  padding: 10px 15px;
+.pagination button {
+  border: 2px solid #007bff; /* Blauer Rand */
+  padding: 09px 15px; /* Größere Buttons */
   margin: 5px;
   background-color: #007bff; /* Typisches Blau für clickbare Buttons */
   color: white; /* Weiße Schrift */
-  font-size: 0.9rem;
-  border-radius: 5px;
-  cursor: pointer; /* Zeigt, dass der Button clickbar ist */
+  font-size: 1rem; /* Größere Schrift */
+  border-radius: 15px; /* Abgerundete Ecken */
+  cursor: pointer; /* Hand-Cursor */
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; /* Sanfte Animation */
 }
 
-/* Hover-Effekt nur für nicht-aktive Buttons */
-button:hover:not(.active):not(:disabled) {
+/* Hover-Effekt für clickbare Buttons */
+.pagination button:hover:not(.active):not(:disabled) {
   background-color: green; /* Grün beim Hover */
   border-color: green; /* Grüner Rand beim Hover */
 }
-
-/* Aktive Buttons */
-button.active {
+/* Aktive Buttons (nicht clickbar) */
+.pagination button.active {
   background-color: lightgoldenrodyellow; /* Hellgoldener Hintergrund */
-  border: 1px solid #007bff; /* Blauer Rand */
   color: #007bff; /* Blaue Schrift */
-  font-size: 0.9rem;
-  cursor: default; /* Kein Hand-Cursor für aktive Buttons */
+  border: 2px solid #007bff; /* Blauer Rand */
+  cursor: default; /* Kein Hand-Cursor */
 }
 
-/* Deaktivierte Buttons */
-button:disabled {
+/* Nicht-clickbare Buttons */
+.pagination button:disabled {
   background-color: lightgoldenrodyellow; /* Hellgelber Hintergrund */
   color: #007bff; /* Blaue Schrift */
-  border: 1px solid #007bff; /* Blauer Rand */
+  border: 2px solid #007bff; /* Blauer Rand */
   cursor: not-allowed; /* Zeigt an, dass der Button nicht clickbar ist */
 }
-

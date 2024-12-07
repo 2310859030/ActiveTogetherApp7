@@ -1,0 +1,31 @@
+<div class="table-container">
+  <h2>Angemeldete Teilnehmer</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Geburtsdatum</th>
+      <th>Kurs</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let registration of storeService.registrations">
+      <td>{{ registration.name }}</td>
+      <td>{{ registration.birthdate }}</td>
+      <td>{{ registration.course.name }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button
+      [ngClass]="page === storeService.currentPage ? 'active' : ''"
+      (click)="selectPage(page)"
+      *ngFor="let page of returnAllPages()"
+      [disabled]="page === storeService.currentPage"
+    >
+      {{ page }}
+    </button>
+  </div>
+</div>
