@@ -84,3 +84,41 @@ table tr:hover {
   border: 2px solid #007bff; /* Blauer Rand */
   cursor: not-allowed; /* Zeigt an, dass der Button nicht clickbar ist */
 }
+
+/* Desktop-Modus: Ab 768px */
+@media (min-width: 768px) {
+  .table-container {
+    width: 83.33%; /* 10 von 12 Spalten */
+    margin: 0 auto; /* Tabelle horizontal zentrieren */
+  }
+
+  .row {
+    height: 200px; /* Feste Höhe für die Rows */
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+  }
+
+  table {
+    margin: 0 auto; /* Tabelle bleibt zentriert */
+  }
+}
+
+/* Mobile-Modus: Bis 767px */
+@media (max-width: 767px) {
+  .table-container {
+    width: 100%; /* Volle Breite der Tabelle */
+    padding: 10px; /* Weniger Padding für kleinere Bildschirme */
+  }
+
+  table {
+    font-size: 0.85rem; /* Kleinere Schriftgröße für bessere Lesbarkeit */
+  }
+
+  .pagination {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; /* Zentrierung der Buttons */
+  }
+}
+

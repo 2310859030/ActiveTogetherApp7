@@ -1,65 +1,31 @@
 <div class="form-container">
   <h2>Zum Kurs anmelden!</h2>
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <!-- Name -->
-    <mat-form-field appearance="outline" class="form-field">
-      <mat-label>Name</mat-label>
-      <input
-        matInput
-        placeholder="Name"
-        formControlName="name"
-        required
-      />
-      <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">
-        Name ist erforderlich.
-      </mat-error>
-    </mat-form-field>
-
-    <!-- Geburtsdatum -->
-    <mat-form-field appearance="outline" class="form-field">
-      <mat-label>Geburtsdatum</mat-label>
-      <input
-        matInput
-        [matDatepicker]="picker"
-        formControlName="birthdate"
-        required
-      />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error
-        *ngIf="registrationForm.get('birthdate')?.hasError('required')"
-      >
-        Geburtsdatum ist erforderlich.
-      </mat-error>
-    </mat-form-field>
-
-    <!-- Kurs auswählen -->
-    <mat-form-field appearance="outline" class="form-field">
-      <mat-label>Kurs auswählen</mat-label>
-      <mat-select formControlName="courseId" required>
-        <mat-option value="" disabled>Bitte auswählen</mat-option>
-        <mat-option *ngFor="let course of storeService.courses" [value]="course.id">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" placeholder="Name" />
+    </div>
+    <div class="form-group">
+      <label for="birthdate">Geburtsdatum</label>
+      <input id="birthdate" type="date" formControlName="birthdate" />
+    </div>
+    <div class="form-group">
+      <label for="courseId">Kurs auswählen</label>
+      <select id="courseId" formControlName="courseId">
+        <option value="" disabled>Bitte auswählen</option>
+        <option *ngFor="let course of storeService.courses" [value]="course.id">
           {{ course.name }}
-        </mat-option>
-      </mat-select>
-      <mat-error
-        *ngIf="registrationForm.get('courseId')?.hasError('required')"
-      >
-        Bitte wähle einen Kurs aus.
-      </mat-error>
-    </mat-form-field>
-
-    <!-- Newsletter -->
-    <mat-checkbox formControlName="newsletter">
-      Ich möchte den Newsletter mit neuen Kursangeboten erhalten.
-    </mat-checkbox>
-
-    <!-- Absenden -->
-    <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">
-      Erfassen
-    </button>
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>
+        <input type="checkbox" formControlName="newsletter" />
+        Ich möchte den Newsletter mit neuen Kursangeboten erhalten.
+      </label>
+    </div>
+    <div class="form-group">
+      <button type="submit">Erfassen</button>
+    </div>
   </form>
 </div>

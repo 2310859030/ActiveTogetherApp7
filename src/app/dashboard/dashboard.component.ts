@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {DataComponent} from "./data/data.component";
 import {AddDataComponent} from "./add-data/add-data.component";
 import {DisplayDataComponent} from "./display-data/display-data.component";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,12 @@ import {DisplayDataComponent} from "./display-data/display-data.component";
   imports: [
     DataComponent,
     AddDataComponent,
-    DisplayDataComponent
+    DisplayDataComponent,
+    CommonModule
   ],
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  public showForm = true;
 
 }

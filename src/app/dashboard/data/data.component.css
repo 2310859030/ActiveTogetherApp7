@@ -84,3 +84,23 @@ button:disabled {
   cursor: not-allowed; /* Zeigt an, dass der Button nicht clickbar ist */
 }
 
+/* Desktop-spezifische Einstellungen */
+@media (min-width: 768px) {
+  .desktop-row {
+    height: 200px; /* Höhe der Row auf Desktop */
+  }
+  .desktop-row > div {
+    display: flex;
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+  }
+}
+
+/* Mobile Ansicht (Standard, kein spezielles Styling erforderlich) */
+@media (max-width: 767px) {
+  .col-md-10 {
+    width: 100%; /* Nutzt die volle Breite */
+  }
+}
+
+

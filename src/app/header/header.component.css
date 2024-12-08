@@ -51,7 +51,7 @@
   background-color: lightgoldenrodyellow; /* Hellgoldener Hintergrund */
   border: 2px solid #007bff; /* Blauer Rand */
   color: #007bff; /* Blaue Schrift */
-  cursor: default; /* Zeigt an, dass der Button nicht klickbar ist */
+  cursor: not-allowed; /* Zeigt an, dass der Button nicht klickbar ist */
   pointer-events: none; /* Verhindert jegliche Klicks */
   transform: none; /* Entfernt Skalierung */
 }

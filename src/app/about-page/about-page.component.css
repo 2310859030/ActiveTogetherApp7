@@ -33,7 +33,6 @@
   font-size: 3rem;
   color: darkgreen;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .course {
@@ -47,6 +46,6 @@
 }
 
 .course p {
-  font-size: 1.2px;
+  font-size: 1.2rem;
   color: #555;
 }

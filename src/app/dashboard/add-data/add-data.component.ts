@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {BackendService} from "../../shared/backend.service";
-import {StoreService} from "../../shared/store.service";
-import {MatInputModule} from "@angular/material/input";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatSelectModule} from "@angular/material/select";
-import {MatCheckboxModule} from "@angular/material/checkbox";
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StoreService } from '../../shared/store.service';
+import { BackendService } from '../../shared/backend.service';
+import {SharedModule} from "../../shared/shared.module";
 
 @Component({
   selector: 'app-add-data',
@@ -14,11 +10,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
   styleUrls: ['./add-data.component.css'],
   standalone: true,
   imports: [
-    ReactiveFormsModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatSelectModule,
-    MatCheckboxModule
+    SharedModule
   ]
 })
 export class AddDataComponent implements OnInit {

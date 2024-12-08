@@ -4,11 +4,12 @@ import { HeaderComponent } from './header/header.component';
 import { BackendService } from './shared/backend.service';
 import { SharedModule } from './shared/shared.module';
 import { StoreService } from './shared/store.service';
+import {LoadingSpinnerComponent} from "./shared/loading-spinner/loading-spinner.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SharedModule],
+  imports: [RouterOutlet, HeaderComponent, SharedModule, LoadingSpinnerComponent],
   providers: [BackendService, StoreService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
