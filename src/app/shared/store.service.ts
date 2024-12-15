@@ -5,6 +5,7 @@ import { Registration } from './Interfaces/Registration';
 @Injectable({
   providedIn: 'root'
 })
+
 export class StoreService {
 
   constructor() { }

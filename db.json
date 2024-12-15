@@ -135,6 +135,13 @@
       "courseId": "_iL775i",
       "newsletter": false,
       "id": 10
+    },
+    {
+      "name": "Final Test",
+      "birthdate": "1990-01-01",
+      "courseId": "_iL775j",
+      "newsletter": true,
+      "id": 11
     }
   ]
 }

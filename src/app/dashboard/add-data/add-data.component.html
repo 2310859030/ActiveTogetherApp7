@@ -20,7 +20,7 @@
     <div class="form-group">
       <label for="courseId">Kurs auswählen</label>
       <mat-form-field class="p-0">
-        <mat-select id="courseID" formControlName="courseId" required>
+        <mat-select id="courseId" formControlName="courseId" required>
           <mat-option value="" disabled>Bitte auswählen</mat-option>
           <mat-option *ngFor="let course of storeService.courses" [value]="course.id">{{ course.name }}</mat-option>
         </mat-select>

@@ -6,11 +6,13 @@
   border-radius: 10px; /* Abgerundete Ecken */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
   background-color: #f9f9f9; /* Weißer Hintergrund */
+  flex: 1; /* Formular nimmt gleichmäßig Platz ein */
+  max-width: 400px; /* Begrenzte Breite */
 }
 
 .form-container h2 {
   text-align: center; /* Überschrift zentrieren */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-group {
@@ -19,7 +21,7 @@
 
 .form-group label {
   display: block; /* Label über das Eingabefeld */
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-weight: bold;
 }
 
@@ -58,17 +60,6 @@
   gap: 20px; /* Abstand zwischen Anmeldung und Tabelle */
   margin: 20px auto; /* Zentrierung und Abstand nach oben/unten */
   max-width: 1200px; /* Maximale Breite */
-}
-
-/* Formular-Stil */
-.form-container {
-  flex: 1; /* Formular nimmt gleichmäßig Platz ein */
-  max-width: 400px; /* Begrenzte Breite */
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Tabellen-Stil */

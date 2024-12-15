@@ -7,6 +7,7 @@ import { Registration } from './Interfaces/Registration';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BackendService {
 
   constructor(private http: HttpClient, private storeService: StoreService) { }

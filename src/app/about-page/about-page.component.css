@@ -7,26 +7,18 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Einleitungstext */
-.intro {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 .intro h1 {
   font-size: 3rem;
   color: darkgreen;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .intro p {
+  text-align: center;
+  margin-bottom: 30px;
   font-size: 1.2rem;
   color: #333;
-}
-
-/* Kursbeschreibungen */
-.courses {
-  margin-bottom: 30px;
 }
 
 .courses h2 {
@@ -35,17 +27,14 @@
   margin-bottom: 20px;
 }
 
-.course {
-  margin-bottom: 20px;
-}
-
-.course h3 {
+.courses h3 {
   font-size: 1.5rem;
   color: darkgreen;
   margin-bottom: 10px;
 }
 
-.course p {
+.courses {
+  margin-bottom: 20px;
   font-size: 1.2rem;
   color: #555;
 }

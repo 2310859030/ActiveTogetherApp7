@@ -1,15 +1,13 @@
-/* Allgemeiner Stil für den Tabellencontainer */
 .table-container {
-  width: 100%; /* Maximale Breite der Tabelle */
-  margin: 20px auto; /* Zentriere die Tabelle */
+  width: 100%;
+  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc; /* Grauer Rahmen */
-  border-radius: 10px; /* Abgerundete Ecken */
-  background-color: #f9f9f9; /* Heller Hintergrund */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Überschrift */
 .table-container h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -18,16 +16,15 @@
   color: #333;
 }
 
-/* Tabelle */
 table {
   width: 100%;
-  border-collapse: collapse; /* Rahmen zusammenführen */
+  border-collapse: collapse;
   font-size: 0.95rem;
   margin-bottom: 20px;
 }
 
-table th {
-  background-color: darkgreen; /* Blaue Kopfzeile */
+th {
+  background-color: darkgreen;
   color: white;
   padding: 10px;
   text-align: left;
@@ -35,72 +32,64 @@ table th {
   border: 1px solid #ddd;
 }
 
-table td {
+td {
   padding: 10px;
   border: 1px solid #ddd;
 }
 
-table tr:nth-child(even) {
-  background-color: lightgoldenrodyellow; /* Alternierende Zeilenfarben */
+tr:nth-child(even) {
+  background-color: lightgoldenrodyellow;
 }
 
-table tr:hover {
-  background-color: #e9e9e9; /* Hover-Effekt */
+tr:hover {
+  background-color: #e9e9e9;
 }
 
-/* Allgemeiner Stil für Pagination-Buttons */
 button {
-  border: 2px solid #007bff; /* Blauer Rand */
+  border: 2px solid #007bff;
   padding: 10px 15px;
   margin: 5px;
-  background-color: #007bff; /* Typisches Blau für clickbare Buttons */
-  color: white; /* Weiße Schrift */
+  background-color: #007bff;
+  color: white;
   font-size: 0.9rem;
   border-radius: 5px;
-  cursor: pointer; /* Zeigt, dass der Button clickbar ist */
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; /* Sanfte Animation */
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Hover-Effekt nur für nicht-aktive Buttons */
 button:hover:not(.active):not(:disabled) {
-  background-color: green; /* Grün beim Hover */
-  border-color: green; /* Grüner Rand beim Hover */
+  background-color: green;
+  border-color: green;
 }
 
-/* Aktive Buttons */
 button.active {
-  background-color: lightgoldenrodyellow; /* Hellgoldener Hintergrund */
-  border: 1px solid #007bff; /* Blauer Rand */
-  color: #007bff; /* Blaue Schrift */
+  background-color: lightgoldenrodyellow;
+  border: 1px solid #007bff;
+  color: #007bff;
   font-size: 0.9rem;
-  cursor: default; /* Kein Hand-Cursor für aktive Buttons */
+  cursor: default;
 }
 
-/* Deaktivierte Buttons */
 button:disabled {
-  background-color: lightgoldenrodyellow; /* Hellgelber Hintergrund */
-  color: #007bff; /* Blaue Schrift */
-  border: 1px solid #007bff; /* Blauer Rand */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht clickbar ist */
+  background-color: lightgoldenrodyellow;
+  color: #007bff;
+  border: 1px solid #007bff;
+  cursor: not-allowed;
 }
 
-/* Desktop-spezifische Einstellungen */
 @media (min-width: 768px) {
   .desktop-row {
-    height: 200px; /* Höhe der Row auf Desktop */
+    height: 200px;
   }
   .desktop-row > div {
     display: flex;
-    align-items: center; /* Vertikale Zentrierung */
-    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center;
+    justify-content: center;
   }
 }
 
-/* Mobile Ansicht (Standard, kein spezielles Styling erforderlich) */
 @media (max-width: 767px) {
   .col-md-10 {
-    width: 100%; /* Nutzt die volle Breite */
+    width: 100%;
   }
 }
-
-

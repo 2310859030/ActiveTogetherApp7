@@ -49,7 +49,7 @@ export class AddDataComponent implements OnInit {
       name: ['', Validators.required],
       birthdate: ['', Validators.required],
       courseId: ['', Validators.required],
-      newsletter: [false], // Standardmäßig nicht abonniert
+      newsletter: [false],
     });
   }
 
@@ -59,7 +59,6 @@ export class AddDataComponent implements OnInit {
 
       this.backendService.addRegistration(registrationData, this.storeService.currentPage);
 
-      // Überprüfen, ob der Benutzer den Newsletter abonniert hat
       if (registrationData.newsletter) {
         console.log('Benutzer hat den Newsletter abonniert.');
       }

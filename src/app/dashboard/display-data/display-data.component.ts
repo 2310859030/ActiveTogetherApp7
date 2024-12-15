@@ -8,8 +8,9 @@ import { BackendService } from '../../shared/backend.service';
   templateUrl: './display-data.component.html',
   styleUrls: ['./display-data.component.css'],
   standalone: true,
-  imports: [NgClass, NgForOf], // Wichtige Angular-Direktiven importieren
+  imports: [NgClass, NgForOf],
 })
+
 export class DisplayDataComponent {
   constructor(public storeService: StoreService, private backendService: BackendService) {}
 
@@ -29,5 +30,4 @@ export class DisplayDataComponent {
     }
     return res;
   }
-
 }
