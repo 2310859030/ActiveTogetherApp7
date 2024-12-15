@@ -3,21 +3,19 @@
   <div class="header-image" [style.backgroundImage]="'url(' + imagePath + ')'"></div>
   <div class="nav-links">
     <!-- Dashboard-Button -->
-    <a
+    <button mat-button
       [routerLink]="'/dashboard'"
       routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
+      [routerLinkActiveOptions]="{ exact: true }">
       Dashboard
-    </a>
+    </button>
 
     <!-- About-Button -->
-    <a
+    <button mat-button
       [routerLink]="'/about'"
       routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
+      [routerLinkActiveOptions]="{ exact: true }">
       About
-    </a>
+    </button>
   </div>
 </div>

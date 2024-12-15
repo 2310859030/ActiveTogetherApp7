@@ -5,7 +5,7 @@
       <label for="name">Name</label>
       <mat-form-field class="p-0">
         <input matInput id="name" placeholder="Vorname Nachname" formControlName="name"/>
-        <mat-error>Bitte Name eintragen.</mat-error>
+        <mat-error *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">Bitte Name eintragen.</mat-error>
       </mat-form-field>
     </div>
     <div class="form-group">
@@ -14,26 +14,42 @@
         <input matInput id="birthdate" type="date" placeholder="Wähle dein Geburtsdatum." formControlName="birthdate" />
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>
-        <mat-error>Bitte Geburtsdatum auswählen.</mat-error>
+        <mat-error *ngIf="registrationForm.get('birthdate')?.invalid && registrationForm.get('birthdate')?.touched">Bitte Geburtsdatum auswählen.</mat-error>
       </mat-form-field>
     </div>
     <div class="form-group">
       <label for="courseId">Kurs auswählen</label>
-      <select id="courseId" formControlName="courseId">
-        <option value="" disabled>Bitte auswählen</option>
-        <option *ngFor="let course of storeService.courses" [value]="course.id">
-          {{ course.name }}
-        </option>
-      </select>
+      <mat-form-field class="p-0">
+        <mat-select id="courseID" formControlName="courseId" required>
+          <mat-option value="" disabled>Bitte auswählen</mat-option>
+          <mat-option *ngFor="let course of storeService.courses" [value]="course.id">{{ course.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="registrationForm.get('courseId')?.invalid && registrationForm.get('courseId')?.touched">Bitte Kurs auswählen.</mat-error>
+      </mat-form-field>
     </div>
     <div class="form-group">
-      <label>
-        <input type="checkbox" formControlName="newsletter" />
+     <mat-checkbox formControlName="newsletter">
         Ich möchte den Newsletter mit neuen Kursangeboten erhalten.
-      </label>
+     </mat-checkbox>
     </div>
     <div class="form-group">
       <button type="submit">Erfassen</button>
     </div>
   </form>
+  <div class="modal show" tabindex="-1" role="dialog" [style.display]="showModal ? 'block' : 'none'" (click)="closeModal()" style="position: absolute; top: 0; left: 0; width:100%; height:100%; background: rgba(0,0,0,0.5);">
+    <div class="modal-dialog modal-dialog-centered" role="document" (click)="$event.stopPropagation()" style="max-width:90%; margin:auto;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Erfolg</h5>
+          <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Sie haben sich erfolgreich zum Kurs angemeldet.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="closeModal()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

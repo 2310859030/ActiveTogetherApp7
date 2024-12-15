@@ -6,7 +6,9 @@ import {SharedModule} from "../../shared/shared.module";
 import {MatError, MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatDatepicker, MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
-import {provideNativeDateAdapter} from '@angular/material/core';
+import {MatOption, provideNativeDateAdapter} from '@angular/material/core';
+import {MatSelect} from "@angular/material/select";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-add-data',
@@ -22,7 +24,10 @@ import {provideNativeDateAdapter} from '@angular/material/core';
     MatError,
     MatDatepickerToggle,
     MatDatepicker,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatOption,
+    MatSelect,
+    MatCheckbox
   ],
   providers: [provideNativeDateAdapter()],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -30,12 +35,14 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 
 export class AddDataComponent implements OnInit {
   public registrationForm!: FormGroup;
+  public showModal = false;
 
   constructor(
     private formBuilder: FormBuilder,
     public storeService: StoreService,
     private backendService: BackendService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
@@ -50,16 +57,25 @@ export class AddDataComponent implements OnInit {
     if (this.registrationForm.valid) {
       const registrationData = this.registrationForm.value;
 
+      this.backendService.addRegistration(registrationData, this.storeService.currentPage);
+
       // Überprüfen, ob der Benutzer den Newsletter abonniert hat
       if (registrationData.newsletter) {
         console.log('Benutzer hat den Newsletter abonniert.');
       }
 
-      // Sende die Daten an den Backend-Service
-      this.backendService.addRegistration(
-        registrationData,
-        this.storeService.currentPage
-      );
+      this.registrationForm.reset({
+        name: '',
+        birthdate: '',
+        courseID: '',
+        newsletter: false
+      });
+
+      this.showModal = true;
     }
+  }
+
+  closeModal(): void {
+    this.showModal = false;
   }
 }

@@ -26,7 +26,7 @@
   background-color: black; /* Hintergrundfarbe für den Bereich */
 }
 
-.nav-links a {
+.nav-links button {
   font-size: 1.2rem; /* Schriftgröße */
   padding: 10px 20px; /* Abstand innerhalb des Buttons */
   border: 2px solid #007bff; /* Blauer Rand */
@@ -40,14 +40,14 @@
 }
 
 /* Hover-Effekt nur für nicht-aktive Links */
-.nav-links a:hover:not(.active) {
+.nav-links button:hover:not(.active) {
   background-color: green; /* Grün beim Hover */
   border-color: green; /* Grüner Rand beim Hover */
   transform: scale(1.1); /* Vergrößerung beim Hover */
 }
 
 /* Aktiver Link (z. B. Dashboard auf Dashboard-Seite) */
-.nav-links a.active {
+.nav-links button.active {
   background-color: lightgoldenrodyellow; /* Hellgoldener Hintergrund */
   border: 2px solid #007bff; /* Blauer Rand */
   color: #007bff; /* Blaue Schrift */
@@ -57,7 +57,7 @@
 }
 
 /* Hover-Effekt für den aktiven Link */
-.nav-links a.active:hover {
+.nav-links button.active:hover {
   background-color: lightgoldenrodyellow; /* Hintergrund bleibt gleich */
   border: 2px solid #007bff; /* Rand bleibt gleich */
   color: #007bff; /* Schrift bleibt gleich */
@@ -65,7 +65,7 @@
   transform: none; /* Keine Skalierung */
 }
 
-.nav-links a.active:disabled {
+.nav-links button.active:disabled {
   background-color: lightgoldenrodyellow; /* Hellgelber Hintergrund */
   color: #007bff; /* Blaue Schrift */
   border: 2px solid #007bff; /* Blauer Rand */

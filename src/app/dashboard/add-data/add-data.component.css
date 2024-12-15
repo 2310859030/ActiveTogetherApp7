@@ -98,22 +98,9 @@ th {
   color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2; /* Alternierende Zeilenfarben */
-}
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.5); /* Größere Checkbox */
-}
 
-label {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  color: #333;
-}
 
-label input[type="checkbox"]:checked {
-  accent-color: #007bff; /* Blaue Checkbox, wenn sie ausgewählt ist */
-}
+
+
+
 
