@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { StoreService } from '../../shared/store.service';
-import { BackendService } from '../../shared/backend.service';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {StoreService} from '../../shared/store.service';
+import {BackendService} from '../../shared/backend.service';
 import {SharedModule} from "../../shared/shared.module";
+import {MatError, MatFormField, MatFormFieldModule} from "@angular/material/form-field";
+import {MatInput, MatInputModule} from "@angular/material/input";
+import {MatDatepicker, MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
+import {provideNativeDateAdapter} from '@angular/material/core';
 
 @Component({
   selector: 'app-add-data',
@@ -10,9 +14,20 @@ import {SharedModule} from "../../shared/shared.module";
   styleUrls: ['./add-data.component.css'],
   standalone: true,
   imports: [
-    SharedModule
-  ]
+    SharedModule,
+    MatFormField,
+    MatFormFieldModule,
+    MatInput,
+    MatInputModule,
+    MatError,
+    MatDatepickerToggle,
+    MatDatepicker,
+    MatDatepickerModule
+  ],
+  providers: [provideNativeDateAdapter()],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class AddDataComponent implements OnInit {
   public registrationForm!: FormGroup;
 

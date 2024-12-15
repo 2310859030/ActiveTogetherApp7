@@ -3,11 +3,19 @@
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input id="name" type="text" formControlName="name" placeholder="Name" />
+      <mat-form-field class="p-0">
+        <input matInput id="name" placeholder="Vorname Nachname" formControlName="name"/>
+        <mat-error>Bitte Name eintragen.</mat-error>
+      </mat-form-field>
     </div>
     <div class="form-group">
       <label for="birthdate">Geburtsdatum</label>
-      <input id="birthdate" type="date" formControlName="birthdate" />
+      <mat-form-field class="p-0">
+        <input matInput id="birthdate" type="date" placeholder="Wähle dein Geburtsdatum." formControlName="birthdate" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+        <mat-error>Bitte Geburtsdatum auswählen.</mat-error>
+      </mat-form-field>
     </div>
     <div class="form-group">
       <label for="courseId">Kurs auswählen</label>
