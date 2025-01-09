@@ -12,7 +12,8 @@ import { BackendService } from '../../shared/backend.service';
 })
 
 export class DisplayDataComponent {
-  constructor(public storeService: StoreService, private backendService: BackendService) {}
+  constructor(public storeService: StoreService, private backendService: BackendService) {
+  }
 
   public page: number = 0;
 

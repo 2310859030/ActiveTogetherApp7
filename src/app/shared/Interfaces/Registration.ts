@@ -1,7 +1,7 @@
 import { Course } from "./Course";
 
 export interface Registration {
-    id: string;
+    id: number;
     name: string;
     birthdate: string,
     course: Course,

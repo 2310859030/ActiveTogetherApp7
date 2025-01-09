@@ -6,14 +6,15 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { StoreService } from './shared/store.service';
 import { BackendService } from './shared/backend.service';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
+    provideAnimations(),
     provideHttpClient(),
     StoreService,
-    BackendService, provideAnimationsAsync()]
+    BackendService]
 };

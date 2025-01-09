@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Course } from './Interfaces/Course';
 import { Registration } from './Interfaces/Registration';
+import {HttpClient} from "@angular/common/http";
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { Registration } from './Interfaces/Registration';
 
 export class StoreService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   public courses: Course[] = [];
   public registrations: Registration[] = [];
@@ -16,4 +18,7 @@ export class StoreService {
   public currentPage: number = 1;
   public coursesLoading = true;
   public registrationLoading = true;
+
 }
+
+

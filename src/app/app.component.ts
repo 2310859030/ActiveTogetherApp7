@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { BackendService } from './shared/backend.service';
-import { SharedModule } from './shared/shared.module';
 import { StoreService } from './shared/store.service';
-import {LoadingSpinnerComponent} from "./shared/loading-spinner/loading-spinner.component";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SharedModule, LoadingSpinnerComponent],
+  imports: [RouterOutlet, HeaderComponent],
   providers: [BackendService, StoreService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

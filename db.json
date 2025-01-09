@@ -71,77 +71,72 @@
   ],
   "registrations": [
     {
-      "id": 1,
-      "name": "Testuser",
-      "birthdate": "2024-11-13",
-      "courseId": "_iL775j"
-    },
-    {
-      "name": "Julia Schabasser",
-      "courseId": "_iL775i",
-      "birthdate": "1995-02-23",
-      "id": 2
-    },
-    {
+      "id": 3,
       "name": "Julia Schabasser",
       "courseId": "_iL775a",
-      "birthdate": "1995-02-23",
-      "id": 3
+      "birthdate": "1995-02-23"
     },
     {
+      "id": 4,
       "name": "Nina Test",
       "courseId": "_iL775i",
-      "birthdate": "2024-12-19",
-      "id": 4
+      "birthdate": "2024-12-19"
     },
     {
+      "id": 5,
       "name": "Nina Test 2",
       "birthdate": "1986-06-18",
       "courseId": "_iL775i",
-      "newsletter": false,
-      "id": 5
+      "newsletter": false
     },
     {
+      "id": 6,
       "name": "Nina Nina",
       "birthdate": "1980-05-04",
       "courseId": "_iL775i",
-      "newsletter": true,
-      "id": 6
+      "newsletter": true
     },
     {
+      "id": 7,
       "name": "Nina Ho",
       "birthdate": "1980-04-17",
       "courseId": "_iL775i",
-      "newsletter": false,
-      "id": 7
+      "newsletter": false
     },
     {
+      "id": 8,
       "name": "Testuser",
       "birthdate": "1987-11-23",
       "courseId": "_iL775i",
-      "newsletter": true,
-      "id": 8
+      "newsletter": true
     },
     {
+      "id": 9,
       "name": "Hannelore",
       "birthdate": "2020-12-12",
       "courseId": "_iL775a",
-      "newsletter": true,
-      "id": 9
+      "newsletter": true
     },
     {
+      "id": 10,
       "name": "Markus Huber",
       "birthdate": "1987-05-12",
       "courseId": "_iL775i",
-      "newsletter": false,
-      "id": 10
+      "newsletter": false
     },
     {
+      "id": 11,
       "name": "Final Test",
       "birthdate": "1990-01-01",
       "courseId": "_iL775j",
+      "newsletter": true
+    },
+    {
+      "name": "Nina",
+      "birthdate": "2025-01-09T23:00:00.000Z",
+      "courseId": "_iL775j",
       "newsletter": true,
-      "id": 11
+      "id": 12
     }
   ]
 }

@@ -5,8 +5,9 @@ import {BackendService} from '../../shared/backend.service';
 import {SharedModule} from "../../shared/shared.module";
 import {MatError, MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
-import {MatDatepicker, MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatOption, provideNativeDateAdapter} from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelect} from "@angular/material/select";
 import {MatCheckbox} from "@angular/material/checkbox";
 
@@ -23,11 +24,11 @@ import {MatCheckbox} from "@angular/material/checkbox";
     MatInputModule,
     MatError,
     MatDatepickerToggle,
-    MatDatepicker,
     MatDatepickerModule,
     MatOption,
     MatSelect,
-    MatCheckbox
+    MatCheckbox,
+    MatNativeDateModule
   ],
   providers: [provideNativeDateAdapter()],
   changeDetection: ChangeDetectionStrategy.OnPush
