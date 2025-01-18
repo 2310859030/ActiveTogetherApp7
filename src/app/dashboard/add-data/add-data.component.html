@@ -11,7 +11,7 @@
     <div class="form-group">
       <label for="birthdate">Geburtsdatum</label>
       <mat-form-field class="p-0">
-        <input matInput id="birthdate" [matDatepicker]="picker" placeholder="Wähle dein Geburtsdatum." formControlName="birthdate" />
+        <input matInput id="birthdate" [matDatepicker]="picker" placeholder="Wähle dein Geburtsdatum." formControlName="birthdate" [value]="registrationForm.get('birthdate')?.value | date:'yyyy-MM-dd'" />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="registrationForm.get('birthdate')?.invalid && registrationForm.get('birthdate')?.touched">Bitte Geburtsdatum auswählen.</mat-error>

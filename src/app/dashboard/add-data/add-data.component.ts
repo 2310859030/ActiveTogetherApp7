@@ -48,7 +48,7 @@ export class AddDataComponent implements OnInit {
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
       name: ['', Validators.required],
-      birthdate: ['', Validators.required],
+      birthdate: [null, Validators.required],
       courseId: ['', Validators.required],
       newsletter: [false],
     });
@@ -66,7 +66,7 @@ export class AddDataComponent implements OnInit {
 
       this.registrationForm.reset({
         name: '',
-        birthdate: '',
+        birthdate: null,
         courseID: '',
         newsletter: false
       });

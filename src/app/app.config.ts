@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { StoreService } from './shared/store.service';
 import { BackendService } from './shared/backend.service';
 import {provideAnimations} from "@angular/platform-browser/animations";
@@ -14,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideAnimations(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     StoreService,
     BackendService]
 };

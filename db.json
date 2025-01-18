@@ -71,72 +71,39 @@
   ],
   "registrations": [
     {
-      "id": 3,
-      "name": "Julia Schabasser",
-      "courseId": "_iL775a",
-      "birthdate": "1995-02-23"
-    },
-    {
-      "id": 4,
-      "name": "Nina Test",
+      "name": "Ni Na",
+      "birthdate": "2025-01-14T23:00:00.000Z",
       "courseId": "_iL775i",
-      "birthdate": "2024-12-19"
-    },
-    {
-      "id": 5,
-      "name": "Nina Test 2",
-      "birthdate": "1986-06-18",
-      "courseId": "_iL775i",
-      "newsletter": false
-    },
-    {
-      "id": 6,
-      "name": "Nina Nina",
-      "birthdate": "1980-05-04",
-      "courseId": "_iL775i",
-      "newsletter": true
-    },
-    {
-      "id": 7,
-      "name": "Nina Ho",
-      "birthdate": "1980-04-17",
-      "courseId": "_iL775i",
-      "newsletter": false
-    },
-    {
-      "id": 8,
-      "name": "Testuser",
-      "birthdate": "1987-11-23",
-      "courseId": "_iL775i",
-      "newsletter": true
-    },
-    {
-      "id": 9,
-      "name": "Hannelore",
-      "birthdate": "2020-12-12",
-      "courseId": "_iL775a",
-      "newsletter": true
-    },
-    {
-      "id": 10,
-      "name": "Markus Huber",
-      "birthdate": "1987-05-12",
-      "courseId": "_iL775i",
-      "newsletter": false
-    },
-    {
-      "id": 11,
-      "name": "Final Test",
-      "birthdate": "1990-01-01",
-      "courseId": "_iL775j",
-      "newsletter": true
-    },
-    {
-      "name": "Nina",
-      "birthdate": "2025-01-09T23:00:00.000Z",
-      "courseId": "_iL775j",
       "newsletter": true,
-      "id": 12
+      "id": 13
+    },
+    {
+      "name": "Maria Test",
+      "birthdate": "2025-01-14T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "newsletter": false,
+      "id": 15
+    },
+    {
+      "name": "Nina Ho",
+      "birthdate": "2025-01-09T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "newsletter": true,
+      "id": 16
+    },
+    {
+      "name": "Nina Ho",
+      "birthdate": "2016-01-03T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "newsletter": false,
+      "id": 17
+    },
+    {
+      "name": "Maria Test",
+      "birthdate": "1996-03-12T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "newsletter": true,
+      "id": 18
     }
   ]
 }

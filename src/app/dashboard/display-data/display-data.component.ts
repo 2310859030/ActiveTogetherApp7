@@ -1,34 +1,34 @@
 import { Component } from '@angular/core';
-import { NgClass, NgForOf } from '@angular/common';
+import {DatePipe, NgClass, NgForOf, NgIf} from '@angular/common';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
+import { MatIcon } from '@angular/material/icon';
+import { LoadingSpinnerComponent } from '../../loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-display-data',
   templateUrl: './display-data.component.html',
   styleUrls: ['./display-data.component.css'],
   standalone: true,
-  imports: [NgClass, NgForOf],
+  imports: [NgClass, NgForOf, NgIf, MatIcon, LoadingSpinnerComponent, DatePipe],
 })
-
 export class DisplayDataComponent {
-  constructor(public storeService: StoreService, private backendService: BackendService) {
-  }
-
   public page: number = 0;
 
-  selectPage(i: any) {
-    let currentPage = i;
-    this.storeService.currentPage = i;
-    this.backendService.getRegistrations(currentPage);
+  constructor(public storeService: StoreService, private backendService: BackendService) {}
+
+  selectPage(page: number): void {
+    this.page = page;
+    this.storeService.currentPage = page;
+    this.backendService.getRegistrations(page);
   }
 
-  public returnAllPages() {
-    var pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
-    let res = [];
-    for (let i = 0; i < pagesCount; i++) {
-      res.push(i + 1);
-    }
-    return res;
+  public returnAllPages(): number[] {
+    const pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
+    return Array.from({ length: pagesCount }, (_, i) => i + 1);
+  }
+
+  deleteRegistration(registrationId: number): void {
+    this.backendService.deleteRegistration(registrationId).subscribe();
   }
 }

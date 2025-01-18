@@ -1,125 +1,164 @@
-/* Allgemeiner Stil für den Tabellencontainer */
-.table-container {
-  width: 100%; /* Maximale Breite der Tabelle */
-  margin: 20px auto; /* Zentriere die Tabelle */
-  padding: 20px;
-  border: 1px solid #ccc; /* Grauer Rahmen */
-  border-radius: 10px; /* Abgerundete Ecken */
-  background-color: #f9f9f9; /* Heller Hintergrund */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+/* Allgemeiner Container */
+.container {
+  margin-top: 20px;
 }
 
-/* Überschrift */
-.table-container h2 {
+.title {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 24px;
   color: #333;
+  margin-bottom: 20px;
 }
 
 /* Tabelle */
-table {
-  width: 100%;
-  border-collapse: collapse; /* Rahmen zusammenführen */
-  font-size: 0.95rem;
-  margin-bottom: 20px;
+.table-wrapper {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-table th {
-  background-color: darkgreen; /* Grüne Kopfzeile */
+.table-header {
+  display: flex;
+  background-color: darkgreen;
   color: white;
-  padding: 10px;
-  text-align: left;
   font-weight: bold;
-  border: 1px solid #ddd;
+  padding: 10px 0;
+  border-radius: 10px;
 }
 
-table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-table tr:nth-child(even) {
-  background-color: lightgoldenrodyellow; /* Alternierende Zeilenfarben */
-}
-
-table tr:hover {
-  background-color: #e9e9e9; /* Hover-Effekt */
-}
-.pagination {
-  margin-top: 10px;
+.table-header > div {
+  flex: 1; /* Jede Spalte nimmt gleichmäßig Platz ein */
   text-align: center;
+  padding: 5px;
 }
 
-.pagination button {
-  border: 2px solid #007bff; /* Blauer Rand */
-  padding: 09px 15px; /* Größere Buttons */
-  margin: 5px;
-  background-color: #007bff; /* Typisches Blau für clickbare Buttons */
-  color: white; /* Weiße Schrift */
-  font-size: 1rem; /* Größere Schrift */
-  border-radius: 15px; /* Abgerundete Ecken */
-  cursor: pointer; /* Hand-Cursor */
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; /* Sanfte Animation */
+/* Zeilen */
+.table-row {
+  display: flex;
+  align-items: center; /* Inhalte vertikal ausrichten */
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  position: relative; /* Wichtig für Spinner und Hintergrund */
+  transition: background-color 0.3s ease; /* Sanfter Farbwechsel */
 }
 
-/* Hover-Effekt für clickbare Buttons */
-.pagination button:hover:not(.active):not(:disabled) {
-  background-color: green; /* Grün beim Hover */
-  border-color: green; /* Grüner Rand beim Hover */
-}
-/* Aktive Buttons (nicht clickbar) */
-.pagination button.active {
-  background-color: lightgoldenrodyellow; /* Hellgoldener Hintergrund */
-  color: #007bff; /* Blaue Schrift */
-  border: 2px solid #007bff; /* Blauer Rand */
-  cursor: default; /* Kein Hand-Cursor */
+.table-row:nth-child(even) {
+  background-color: lightgoldenrodyellow;
 }
 
-/* Nicht-clickbare Buttons */
-.pagination button:disabled {
-  background-color: lightgoldenrodyellow; /* Hellgelber Hintergrund */
-  color: #007bff; /* Blaue Schrift */
-  border: 2px solid #007bff; /* Blauer Rand */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht clickbar ist */
+.table-row:hover {
+  background-color: #e9e9e9;
 }
 
-/* Desktop-Modus: Ab 768px */
-@media (min-width: 768px) {
-  .table-container {
-    width: 83.33%; /* 10 von 12 Spalten */
-    margin: 0 auto; /* Tabelle horizontal zentrieren */
-  }
-
-  .row {
-    height: 200px; /* Feste Höhe für die Rows */
-    display: flex;
-    align-items: center; /* Vertikale Zentrierung */
-    justify-content: center; /* Horizontale Zentrierung */
-  }
-
-  table {
-    margin: 0 auto; /* Tabelle bleibt zentriert */
-  }
+/* Ladezustand */
+.table-row.loading {
+  background-color: rgba(200, 200, 200, 0.5); /* Halbtransparentes Grau */
+  pointer-events: none; /* Interaktion deaktivieren */
 }
 
-/* Mobile-Modus: Bis 767px */
+/* Spalten innerhalb einer Zeile */
+.table-row > div {
+  flex: 1; /* Jede Spalte nimmt gleichmäßig Platz ein */
+  text-align: center;
+  padding: 5px;
+}
+
+/* Button-Styling */
+.delete-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 10px; /* Platz für Spinner */
+}
+
+.delete-button:disabled {
+  background-color: lightgrey; /* Ausgegraut */
+  cursor: not-allowed;
+}
+
+.delete-button:hover:enabled {
+  background-color: darkgreen;
+  color: white;
+  transform: scale(1.05); /* Leichter Zoom beim Hover */
+}
+
+/* Spinner rechts neben dem Button */
+.actions {
+  display: flex;
+  align-items: center; /* Inhalte vertikal zentrieren */
+  gap: 10px; /* Abstand zwischen Button und Spinner */
+}
+
+.app-loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 2px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-button.active {
+  background-color: lightgoldenrodyellow;
+  color: darkgreen;
+  border-color: darkgreen;
+}
+
+.page-button:disabled {
+  background-color: lightgrey;
+  color: darkgrey;
+}
+
+.page-button:not(.active):hover {
+  background-color: green;
+  color: white;
+}
+
+/* Responsives Design */
 @media (max-width: 767px) {
-  .table-container {
-    width: 100%; /* Volle Breite der Tabelle */
-    padding: 10px; /* Weniger Padding für kleinere Bildschirme */
+  .table-wrapper {
+    padding: 15px;
   }
 
-  table {
-    font-size: 0.85rem; /* Kleinere Schriftgröße für bessere Lesbarkeit */
+  .table-header,
+  .table-row {
+    flex-direction: column; /* Zeilen werden untereinander gestapelt */
   }
 
-  .pagination {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center; /* Zentrierung der Buttons */
+  .table-header > div,
+  .table-row > div {
+    text-align: left; /* Inhalt linksbündig ausrichten */
+    padding: 8px 0;
+  }
+
+  .delete-button {
+    width: 100%; /* Buttons füllen die Breite aus */
+    margin-right: 0; /* Kein Platz für Spinner */
+  }
+
+  .actions {
+    justify-content: space-between; /* Abstand zwischen Button und Spinner */
   }
 }
-
-
