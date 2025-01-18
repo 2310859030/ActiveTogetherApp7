@@ -65,6 +65,7 @@
   padding: 5px;
 }
 
+
 .registration-date {
   flex: 1;
   text-align: center;
@@ -100,17 +101,18 @@
   transform: scale(1.05); /* Leichter Zoom beim Hover */
 }
 
-/* Spinner rechts neben dem Button */
-.actions {
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Passt sich der Breite der Zeile an */
+  height: 100%; /* Passt sich genau der Zeilenhöhe an */
+  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparentes Weiß */
   display: flex;
-  align-items: center; /* Inhalte vertikal zentrieren */
-  gap: 10px; /* Abstand zwischen Button und Spinner */
-}
-
-.app-loading-spinner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: center; /* Zentriere Spinner horizontal */
+  align-items: center; /* Zentriere Spinner vertikal */
+  z-index: 1; /* Sicherstellen, dass es über der Zeile liegt */
+  pointer-events: none; /* Keine Interaktionen möglich */
 }
 
 /* Pagination */

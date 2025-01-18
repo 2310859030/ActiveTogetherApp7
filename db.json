@@ -71,44 +71,12 @@
   ],
   "registrations": [
     {
-      "name": "Ni Na",
+      "name": "Nina Test 2",
       "birthdate": "2025-01-14T23:00:00.000Z",
       "courseId": "_iL775i",
       "newsletter": true,
-      "registrationDate": "2024-12-29",
-      "id": 13
-    },
-    {
-      "name": "Maria Test",
-      "birthdate": "2025-01-14T23:00:00.000Z",
-      "courseId": "_iL775i",
-      "newsletter": false,
-      "registrationDate": "2024-12-31",
-      "id": 15
-    },
-    {
-      "name": "Nina Ho",
-      "birthdate": "2025-01-09T23:00:00.000Z",
-      "courseId": "_iL775i",
-      "newsletter": true,
-      "registrationDate": "2025-01-01",
-      "id": 16
-    },
-    {
-      "name": "Nina Ho",
-      "birthdate": "2016-01-03T23:00:00.000Z",
-      "courseId": "_iL775i",
-      "newsletter": false,
-      "registrationDate": "2025-01-07",
+      "registrationDate": "2025-01-17",
       "id": 17
-    },
-    {
-      "name": "Maria Test",
-      "birthdate": "1996-03-12T23:00:00.000Z",
-      "courseId": "_iL775i",
-      "newsletter": true,
-      "registrationDate": "2025-01-08",
-      "id": 18
     },
     {
       "name": "Nina Test 2",
@@ -116,15 +84,31 @@
       "courseId": "_iL775i",
       "newsletter": true,
       "registrationDate": "2025-01-17",
-      "id": 19
+      "id": 15
     },
     {
-      "name": "Nina Nina",
-      "birthdate": "2016-10-03T22:00:00.000Z",
-      "courseId": "_iL775j",
+      "name": "Nina Test 2",
+      "birthdate": "2025-01-14T23:00:00.000Z",
+      "courseId": "_iL775i",
       "newsletter": true,
-      "registrationDate": "2025-01-18",
-      "id": 20
+      "registrationDate": "2025-01-17",
+      "id": 23
+    },
+    {
+      "name": "Nina Test 2",
+      "birthdate": "2025-01-14T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "newsletter": true,
+      "registrationDate": "2025-01-17",
+      "id": 14
+    },
+    {
+      "name": "Nina Test 2",
+      "birthdate": "2025-01-14T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "newsletter": true,
+      "registrationDate": "2025-01-17",
+      "id": 11
     }
   ]
 }

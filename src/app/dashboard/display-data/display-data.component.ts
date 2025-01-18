@@ -3,14 +3,22 @@ import {DatePipe, NgClass, NgForOf, NgIf} from '@angular/common';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
 import { MatIcon } from '@angular/material/icon';
-import { LoadingSpinnerComponent } from '../../loading-spinner/loading-spinner.component';
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
 
 @Component({
   selector: 'app-display-data',
   templateUrl: './display-data.component.html',
   styleUrls: ['./display-data.component.css'],
   standalone: true,
-  imports: [NgClass, NgForOf, NgIf, MatIcon, LoadingSpinnerComponent, DatePipe],
+  imports:
+    [
+      NgClass,
+      NgForOf,
+      NgIf,
+      MatIcon,
+      DatePipe,
+      MatProgressSpinner
+    ],
 })
 export class DisplayDataComponent {
   public page: number = 0;
