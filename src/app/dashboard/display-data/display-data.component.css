@@ -34,6 +34,35 @@
   padding: 5px;
 }
 
+.table-header > .registration-date {
+  background-color: darkgreen; /* Dunkelgrüner Hintergrund */
+  color: white; /* Weißer Text */
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 0; /* Entfernt unerwünschte Abrundungen */
+}
+
+.table-header > .registration-date .mat-sort-header-container {
+  background-color: darkgreen; /* Sichert den grünen Hintergrund */
+  color: white; /* Weißer Text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Deckt die volle Höhe ab */
+}
+
+.table-header > .registration-date .mat-sort-header-button {
+  background-color: darkgreen; /* Dunkelgrün auch für den Sortier-Button */
+  color: white; /* Weißer Text */
+  border: none; /* Entfernt Ränder */
+  padding: 0; /* Verhindert zusätzliche Abstände */
+}
+
+.table-header > .registration-date .mat-sort-header-arrow {
+  color: white; /* Weißer Sortierpfeil */
+}
+
 /* Zeilen */
 .table-row {
   display: flex;
@@ -65,7 +94,6 @@
   padding: 5px;
 }
 
-
 .registration-date {
   flex: 1;
   text-align: center;
@@ -74,7 +102,6 @@
   align-items: center;
   gap: 5px; /* Abstand zwischen Text und Icon */
 }
-
 
 /* Button-Styling */
 .delete-button {
@@ -113,6 +140,15 @@
   align-items: center; /* Zentriere Spinner vertikal */
   z-index: 1; /* Sicherstellen, dass es über der Zeile liegt */
   pointer-events: none; /* Keine Interaktionen möglich */
+}
+
+.mat-sort-header {
+  cursor: pointer;
+  background-color: darkgreen;
+}
+
+.mat-sort-header-arrow {
+  margin-left: 5px;
 }
 
 /* Pagination */

@@ -3,17 +3,19 @@
     <div class="content">
       <h2 class="title text-center">Liste der angemeldeten Teilnehmer</h2>
       <div class="table-wrapper">
-        <div class="table">
+        <div class="table" matSort (matSortChange)="onSortChange($event)">
           <!-- Table Header -->
           <div class="table-header">
             <div class="name">Name des Teilnehmers</div>
             <div class="birthdate">Geburtsdatum</div>
             <div class="course">Kursname</div>
-            <div class="registration-date">Anmeldedatum</div>
+            <div class="registration-date" mat-sort-header="registrationDate">
+              Anmeldedatum
+            </div>
             <div class="actions">Teilnahme stornieren</div>
           </div>
           <!-- Table Rows -->
-          <div class="table-row position-relative" *ngFor="let registration of storeService.registrations">
+          <div class="table-row position-relative" *ngFor="let registration of sortedRegistrations">
             <div *ngIf="storeService.loadingRegistrations[registration.id]" class="overlay">
               <mat-spinner diameter="24"></mat-spinner>
             </div>
@@ -22,11 +24,7 @@
             <div class="course">{{ registration.course.name }}</div>
             <div class="registration-date">{{ registration.registrationDate | date: 'yyyy-MM-dd' }}</div>
             <div class="actions">
-              <button
-                [disabled]="storeService.loadingRegistrations[registration.id]"
-                class="delete-button"
-                (click)="deleteRegistration(registration.id)"
-              >
+              <button [disabled]="storeService.loadingRegistrations[registration.id]" class="delete-button" (click)="deleteRegistration(registration.id)">
                 Teilnahme stornieren
               </button>
             </div>
