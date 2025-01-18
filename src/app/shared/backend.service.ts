@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { StoreService } from './store.service';
 import { Observable } from 'rxjs';
 import { tap, finalize } from 'rxjs/operators';
+import { formatDate } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -39,29 +40,29 @@ export class BackendService {
   }
 
   public addRegistration(registration: any, page: number) {
+    const registrationWithDate = {
+      ...registration,
+      registrationDate: formatDate(new Date(), 'yyyy-MM-dd', 'en-US'), // Automatisches Datum
+    };
+
     this.http
-      .post('http://localhost:5000/registrations', registration)
+      .post('http://localhost:5000/registrations', registrationWithDate)
       .subscribe(() => {
         this.getRegistrations(page);
       });
   }
 
-  // Neu: Registrierungen löschen und Ladezustand steuern
   public deleteRegistration(registrationId: number): Observable<void> {
     const url = `http://localhost:5000/registrations/${registrationId}`;
-
-    // Setze den Ladezustand auf "true"
     this.storeService.setLoading(registrationId, true);
 
     return this.http.delete<void>(url).pipe(
       tap(() => {
-        // Entferne die Registrierung nach erfolgreichem Löschen
         this.storeService.registrations = this.storeService.registrations.filter(
           (reg) => reg.id !== registrationId
         );
       }),
       finalize(() => {
-        // Ladezustand zurücksetzen
         this.storeService.setLoading(registrationId, false);
       })
     );

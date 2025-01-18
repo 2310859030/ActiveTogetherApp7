@@ -9,19 +9,24 @@
             <div class="name">Name des Teilnehmers</div>
             <div class="birthdate">Geburtsdatum</div>
             <div class="course">Kursname</div>
+            <div class="registration-date">Anmeldedatum</div>
             <div class="actions">Teilnahme stornieren</div>
           </div>
           <!-- Table Rows -->
           <div class="table-row position-relative" *ngFor="let registration of storeService.registrations">
-            <!-- Spinner über die gesamte Zeile legen -->
             <div *ngIf="storeService.loadingRegistrations[registration.id]" class="spinner-overlay">
               <app-loading-spinner></app-loading-spinner>
             </div>
             <div class="name">{{ registration.name }}</div>
             <div class="birthdate">{{ registration.birthdate | date: 'yyyy-MM-dd' }}</div>
             <div class="course">{{ registration.course.name }}</div>
+            <div class="registration-date">{{ registration.registrationDate | date: 'yyyy-MM-dd' }}</div>
             <div class="actions">
-              <button [disabled]="storeService.loadingRegistrations[registration.id]" class="delete-button" (click)="deleteRegistration(registration.id)">
+              <button
+                [disabled]="storeService.loadingRegistrations[registration.id]"
+                class="delete-button"
+                (click)="deleteRegistration(registration.id)"
+              >
                 Teilnahme stornieren
               </button>
             </div>
@@ -44,4 +49,3 @@
     </div>
   </div>
 </div>
-

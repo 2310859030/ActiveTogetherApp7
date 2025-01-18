@@ -65,6 +65,16 @@
   padding: 5px;
 }
 
+.registration-date {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Abstand zwischen Text und Icon */
+}
+
+
 /* Button-Styling */
 .delete-button {
   background-color: #007bff;
