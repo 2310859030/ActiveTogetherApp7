@@ -2,15 +2,22 @@
   <h1 class="header-title">{{ title }}</h1>
   <div class="header-image" [style.backgroundImage]="'url(' + imagePath + ')'"></div>
   <div class="nav-links">
-    <button mat-button
+    <!-- Dashboard Button -->
+    <button
+      mat-flat-button
+      color="primary"
       [routerLink]="'/dashboard'"
-      routerLinkActive="active"
+      routerLinkActive="active-button"
       [routerLinkActiveOptions]="{ exact: true }">
       Dashboard
     </button>
-    <button mat-button
+
+    <!-- About Button -->
+    <button
+      mat-flat-button
+      color="primary"
       [routerLink]="'/about'"
-      routerLinkActive="active"
+      routerLinkActive="active-button"
       [routerLinkActiveOptions]="{ exact: true }">
       About
     </button>

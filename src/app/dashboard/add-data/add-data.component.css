@@ -13,6 +13,9 @@
 .form-container h2 {
   text-align: center; /* Überschrift zentrieren */
   margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: darkgreen;
+  font-weight: bold;
 }
 
 .form-group {

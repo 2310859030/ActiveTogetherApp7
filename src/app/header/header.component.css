@@ -26,48 +26,33 @@
   background-color: black; /* Hintergrundfarbe für den Bereich */
 }
 
-.nav-links button {
-  font-size: 1.2rem; /* Schriftgröße */
-  padding: 10px 20px; /* Abstand innerhalb des Buttons */
-  border: 2px solid #007bff; /* Blauer Rand */
-  border-radius: 5px; /* Runde Ecken */
-  text-decoration: none; /* Keine Unterstreichung */
-  color: white; /* Weiße Schrift */
-  background-color: #007bff; /* Typisches Blau für clickbare Buttons */
-  margin: 0 10px; /* Abstand zwischen den Buttons */
-  cursor: pointer; /* Hand-Cursor für clickbare Links */
-  transition: transform 0.2s ease, background-color 0.2s ease; /* Sanfte Animation */
+/* Material Button Anpassungen */
+button[mat-flat-button] {
+  font-size: 1.2rem; /* Größere Schriftgröße */
+  font-weight: bold;
+  text-transform: none; /* Deaktiviert Großbuchstaben */
+  color: white;
+  background-color: #007bff; /* Blaue Standardfarbe */
+  padding: 10px 20px; /* Mehr Innenabstand für größere Buttons */
+  min-width: 150px; /* Gleiche Mindestbreite für beide Buttons */
+  height: 50px; /* Gleiche Höhe für beide Buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex; /* Flexbox für bessere Zentrierung */
+  align-items: center; /* Vertikale Zentrierung */
+  justify-content: center; /* Horizontale Zentrierung */
 }
 
-/* Hover-Effekt nur für nicht-aktive Links */
-.nav-links button:hover:not(.active) {
-  background-color: green; /* Grün beim Hover */
-  border-color: green; /* Grüner Rand beim Hover */
-  transform: scale(1.1); /* Vergrößerung beim Hover */
+button[mat-flat-button]:hover:not(.active-button) {
+  background-color: darkgreen; /* Hover-Farbe wie Teilnehmerliste */
+  color: white;
 }
 
-/* Aktiver Link (z. B. Dashboard auf Dashboard-Seite) */
-.nav-links button.active {
-  background-color: lightgoldenrodyellow; /* Hellgoldener Hintergrund */
-  border: 2px solid #007bff; /* Blauer Rand */
-  color: #007bff; /* Blaue Schrift */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht klickbar ist */
-  pointer-events: none; /* Verhindert jegliche Klicks */
-  transform: none; /* Entfernt Skalierung */
-}
-
-/* Hover-Effekt für den aktiven Link */
-.nav-links button.active:hover {
-  background-color: lightgoldenrodyellow; /* Hintergrund bleibt gleich */
-  border: 2px solid #007bff; /* Rand bleibt gleich */
-  color: #007bff; /* Schrift bleibt gleich */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht klickbar ist */
-  transform: none; /* Keine Skalierung */
-}
-
-.nav-links button.active:disabled {
-  background-color: lightgoldenrodyellow; /* Hellgelber Hintergrund */
-  color: #007bff; /* Blaue Schrift */
-  border: 2px solid #007bff; /* Blauer Rand */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht clickbar ist */
+/* Aktiver Button (RouterLinkActive) */
+button.active-button {
+  background-color: lightgoldenrodyellow; /* Gleiche Farbe wie aktive Seitenanzahl */
+  color: darkgreen;
+  border: 2px solid darkgreen; /* Grüne Umrandung */
+  min-width: 150px; /* Gleiche Mindestbreite */
+  height: 50px; /* Gleiche Höhe */
+  cursor: default;
 }

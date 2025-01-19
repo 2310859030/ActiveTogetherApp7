@@ -1,0 +1,9 @@
+.dashboard-container {
+  background-color: #f2f2f2; /* Leichter grauer Hintergrund */
+  width: 100%; /* Nimmt die gesamte Breite ein */
+  min-height: 100vh; /* Nimmt die gesamte Höhe des Viewports ein */
+  flex-direction: column; /* Elemente untereinander anordnen */
+  align-items: center; /* Inhalte horizontal zentrieren */
+  padding: 20px; /* Abstand innerhalb der Komponente */
+  box-sizing: border-box; /* Padding in die Breite/Höhe einrechnen */
+}
