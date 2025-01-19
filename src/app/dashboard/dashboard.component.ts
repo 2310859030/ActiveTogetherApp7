@@ -8,14 +8,14 @@ import {CommonModule} from "@angular/common";
   selector: 'app-dashboard',
   standalone: true,
   templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
   imports: [
     DataComponent,
     AddDataComponent,
     DisplayDataComponent,
     CommonModule
   ],
-  styleUrl: './dashboard.component.css'
-})
+  })
 
 export class DashboardComponent {
   public showForm = true;

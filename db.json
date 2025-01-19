@@ -79,22 +79,6 @@
       "id": 17
     },
     {
-      "name": "Nina Test 7",
-      "birthdate": "2025-01-14T23:00:00.000Z",
-      "courseId": "_iL775i",
-      "newsletter": true,
-      "registrationDate": "2025-01-17",
-      "id": 15
-    },
-    {
-      "name": "Nina Test 3",
-      "birthdate": "2025-01-14T23:00:00.000Z",
-      "courseId": "_iL775i",
-      "newsletter": true,
-      "registrationDate": "2025-01-03",
-      "id": 14
-    },
-    {
       "name": "Nina Test 1",
       "birthdate": "2025-01-14T23:00:00.000Z",
       "courseId": "_iL775i",

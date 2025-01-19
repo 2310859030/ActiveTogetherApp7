@@ -1,12 +1,14 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import {StoreService} from '../../shared/store.service';
 import {BackendService} from '../../shared/backend.service';
 import {SharedModule} from "../../shared/shared.module";
 import {MatError, MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
-import {MatOption, provideNativeDateAdapter} from '@angular/material/core';
+import {MatOption} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelect} from "@angular/material/select";
 import {MatCheckbox} from "@angular/material/checkbox";
@@ -17,6 +19,8 @@ import {MatCheckbox} from "@angular/material/checkbox";
   styleUrls: ['./add-data.component.css'],
   standalone: true,
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     SharedModule,
     MatFormField,
     MatFormFieldModule,
@@ -30,7 +34,6 @@ import {MatCheckbox} from "@angular/material/checkbox";
     MatCheckbox,
     MatNativeDateModule
   ],
-  providers: [provideNativeDateAdapter()],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
@@ -45,6 +48,7 @@ export class AddDataComponent implements OnInit {
   ) {
   }
 
+
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -53,6 +57,7 @@ export class AddDataComponent implements OnInit {
       newsletter: [false],
     });
   }
+
 
   onSubmit(): void {
     if (this.registrationForm.valid) {

@@ -1,25 +1,26 @@
 <div class="form-container">
   <h2>Zum Kurs anmelden!</h2>
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <mat-form-field class="p-0">
-        <input matInput id="name" placeholder="Vorname Nachname" formControlName="name"/>
-        <mat-error *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">Bitte Name eintragen.</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="form-group">
-      <label for="birthdate">Geburtsdatum</label>
-      <mat-form-field class="p-0">
-        <input matInput id="birthdate" [matDatepicker]="picker" placeholder="Wähle dein Geburtsdatum." formControlName="birthdate" [value]="registrationForm.get('birthdate')?.value | date:'yyyy-MM-dd'" />
+
+    <mat-form-field>
+      <mat-label for="name">Name</mat-label>
+      <input matInput id="name" formControlName="name" />
+      <mat-error *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+        Bitte Name eintragen.
+      </mat-error>
+    </mat-form-field>
+
+      <mat-form-field>
+        <mat-label for="birthdate">Geburtsdatum</mat-label>
+        <input matInput id="birthdate" [matDatepicker]="picker" formControlName="birthdate" [value]="registrationForm.get('birthdate')?.value | date:'yyyy-MM-dd'" />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="registrationForm.get('birthdate')?.invalid && registrationForm.get('birthdate')?.touched">Bitte Geburtsdatum auswählen.</mat-error>
       </mat-form-field>
-    </div>
+
     <div class="form-group">
       <label for="courseId">Kurs auswählen</label>
-      <mat-form-field class="p-0">
+      <mat-form-field>
         <mat-select id="courseId" formControlName="courseId" required>
           <mat-option value="" disabled>Bitte auswählen</mat-option>
           <mat-option *ngFor="let course of storeService.courses" [value]="course.id">{{ course.name }}</mat-option>
