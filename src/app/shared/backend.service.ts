@@ -14,11 +14,11 @@ export class BackendService {
   constructor(private http: HttpClient, private storeService: StoreService) {}
 
   public getCourses() {
-    this.http
-      .get<Course[]>('http://localhost:5000/courses?_expand=eventLocation')
+    this.http.get<Course[]>('http://localhost:5000/courses?_expand=eventLocation')
       .subscribe((data: any) => {
         this.storeService.courses = data;
         this.storeService.coursesLoading = false;
+        this.storeService.registrationLoading = false;
       });
   }
 
@@ -27,17 +27,14 @@ export class BackendService {
       observe: 'response' as const,
       transferCache: {
         includeHeaders: ['X-Total-Count'],
-      },
-    }
+      }
+    };
 
-    this.http
-      .get<Registration[]>('http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=4', options)
+    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=4`, options)
       .subscribe((data: any) => {
         this.storeService.registrations = data.body!;
-        this.storeService.registrationTotalCount = Number(
-          data.headers.get('X-Total-Count')
-        );
-        this.storeService.registrationLoading = false;
+        this.storeService.registrationTotalCount = Number(data.headers.get('X-Total-Count'));
+        this.storeService.registrationLoading = true;
       });
   }
 

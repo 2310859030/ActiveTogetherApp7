@@ -19,7 +19,7 @@ import {DatePipe, CommonModule} from "@angular/common";
   standalone: true
 })
 export class DisplayDataComponent {
-  @ViewChild(MatSort) sort!: MatSort; // Referenz auf MatSort
+  @ViewChild(MatSort) sort!: MatSort;
   public page: number = 0;
 
   constructor(public storeService: StoreService, private backendService: BackendService) {}
@@ -41,15 +41,29 @@ export class DisplayDataComponent {
     console.log(`Sortierzustand geändert: ${sortState.active}, Richtung: ${sortState.direction}`);
   }
 
-  selectPage(page: number): void {
+  selectPage(page: number, event?: Event): void {
+    if (event) {
+      event.preventDefault(); // Verhindert das Standardverhalten des Links
+    }
+
+    const totalPages = this.returnAllPages().length;
+    if (page < 1 || page > totalPages) {
+      return;
+    }
+
     this.page = page;
     this.storeService.currentPage = page;
+    this.storeService.registrationLoading = true;
+
     this.backendService.getRegistrations(page);
   }
 
   public returnAllPages(): number[] {
-    const pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
-    return Array.from({ length: pagesCount }, (_, i) => i + 1);
+    if (this.storeService.registrationTotalCount > 0) {
+      const pagesCount = Math.ceil(this.storeService.registrationTotalCount / 4);
+      return Array.from({length: pagesCount}, (_, i) => i + 1);
+    }
+    return [];
   }
 
   // Löschen einer Registrierung
