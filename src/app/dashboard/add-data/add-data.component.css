@@ -38,6 +38,7 @@
   box-sizing: border-box; /* Padding einbeziehen */
 }
 
+/* Button-Stil */
 .form-group button {
   width: 100%; /* Button in voller Breite */
   padding: 10px;
@@ -52,7 +53,16 @@
 }
 
 .form-group button:hover {
-  background-color: green; /* Dunkleres Blau beim Hover */
+  background-color: green; /* Grüner Hover-Effekt */
+}
+
+/* Deaktivierter Button */
+.form-group button.disabled,
+.form-group button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Container für Kursanmeldung und Tabelle */

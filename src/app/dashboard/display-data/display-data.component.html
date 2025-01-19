@@ -9,6 +9,7 @@
             <div class="name">Name des Teilnehmers</div>
             <div class="birthdate">Geburtsdatum</div>
             <div class="course">Kursname</div>
+            <div class="email">Email</div>
             <div class="registration-date" mat-sort-header="registrationDate">
               Anmeldedatum
             </div>
@@ -22,6 +23,7 @@
             <div class="name">{{ registration.name }}</div>
             <div class="birthdate">{{ registration.birthdate | date: 'yyyy-MM-dd' }}</div>
             <div class="course">{{ registration.course.name }}</div>
+            <div class="email">{{ registration.email }}</div>
             <div class="registration-date">{{ registration.registrationDate | date: 'yyyy-MM-dd' }}</div>
             <div class="actions">
               <button [disabled]="storeService.loadingRegistrations[registration.id]" class="delete-button" (click)="deleteRegistration(registration.id)">

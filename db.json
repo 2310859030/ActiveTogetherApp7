@@ -71,20 +71,94 @@
   ],
   "registrations": [
     {
-      "name": "Nina Test 1",
-      "birthdate": "2025-01-14T23:00:00.000Z",
+      "name": "Markus Leitner",
+      "birthdate": "1953-01-26T23:00:00.000Z",
       "courseId": "_iL775i",
+      "email": "nina@test.at",
       "newsletter": true,
       "registrationDate": "2025-01-01",
       "id": 17
     },
     {
-      "name": "Nina Test 1",
-      "birthdate": "2025-01-14T23:00:00.000Z",
+      "name": "Sabine Mayer",
+      "birthdate": "1990-10-27T23:00:00.000Z",
       "courseId": "_iL775i",
+      "email": "nina@test.at",
       "newsletter": true,
       "registrationDate": "2025-01-12",
       "id": 11
+    },
+    {
+      "name": "Nina Hohl",
+      "birthdate": "1976-06-08T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 18
+    },
+    {
+      "name": "Nina Maria",
+      "birthdate": "1970-08-14T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-01",
+      "id": 124
+    },
+    {
+      "name": "Andreas Wiener",
+      "birthdate": "1983-01-14T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-12",
+      "id": 123
+    },
+    {
+      "name": "Nina Hohl",
+      "birthdate": "1976-06-08T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 58
+    },
+    {
+      "name": "Maria Test",
+      "birthdate": "2016-06-29T22:00:00.000Z",
+      "courseId": "_iL775a",
+      "email": "nina@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 125
+    },
+    {
+      "name": "Lukas Mayer",
+      "birthdate": "2020-04-30T22:00:00.000Z",
+      "courseId": "_iL775a",
+      "email": "lukas@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 126
+    },
+    {
+      "name": "Nina Test 2",
+      "birthdate": "2025-01-05T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina2@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 127
+    },
+    {
+      "name": "Nina Nina",
+      "birthdate": "1996-03-12T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 128
     }
   ]
 }

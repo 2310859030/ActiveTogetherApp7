@@ -3,32 +3,42 @@
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
     <mat-form-field>
-      <mat-label for="name">Name</mat-label>
-      <input matInput id="name" formControlName="name"/>
+      <mat-label>Name</mat-label>
+      <input matInput id="name" formControlName="name" />
       <mat-error *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
         Bitte Name eintragen.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label for="birthdate">Geburtsdatum</mat-label>
-      <input matInput id="birthdate" [matDatepicker]="picker" formControlName="birthdate"
-             [value]="registrationForm.get('birthdate')?.value | date:'yyyy-MM-dd'"/>
+      <mat-label>Geburtsdatum</mat-label>
+      <input matInput id="birthdate" [matDatepicker]="picker" formControlName="birthdate" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="registrationForm.get('birthdate')?.invalid && registrationForm.get('birthdate')?.touched">Bitte
-        Geburtsdatum auswählen.
+      <mat-error *ngIf="registrationForm.get('birthdate')?.invalid && registrationForm.get('birthdate')?.touched">
+        Bitte Geburtsdatum auswählen.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label for="courseId">Kurs auswählen</mat-label>
-      <select matNativeControl id="courseId" formControlName="courseId" required>
-        <option value="" disabled></option>
+      <mat-label>Kurs auswählen</mat-label>
+      <select matNativeControl formControlName="courseId" required>
+        <option value="" disabled>Bitte auswählen</option>
         <option *ngFor="let course of storeService.courses" [value]="course.id">{{ course.name }}</option>
       </select>
-      <mat-error *ngIf="registrationForm.get('courseId')?.invalid && registrationForm.get('courseId')?.touched">Bitte
-        Kurs auswählen.
+      <mat-error *ngIf="registrationForm.get('courseId')?.invalid && registrationForm.get('courseId')?.touched">
+        Bitte Kurs auswählen.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput id="email" formControlName="email" />
+      <mat-error *ngIf="registrationForm.get('email')?.hasError('required') && registrationForm.get('email')?.touched">
+        Bitte Email eintragen.
+      </mat-error>
+      <mat-error *ngIf="registrationForm.get('email')?.hasError('email') && registrationForm.get('email')?.touched">
+        Bitte eine gültige Email-Adresse eingeben.
       </mat-error>
     </mat-form-field>
 
@@ -40,28 +50,10 @@
 
     <section>
       <div class="form-group">
-        <button mat-flat-button color="primary" type="submit">Erfassen</button>
+        <button mat-flat-button color="primary" type="submit" [disabled]="registrationForm.invalid">
+          Erfassen
+        </button>
       </div>
     </section>
-
   </form>
-  <div class="modal show" tabindex="-1" role="dialog" [style.display]="showModal ? 'block' : 'none'"
-       (click)="closeModal()"
-       style="position: absolute; top: 0; left: 0; width:100%; height:100%; background: rgba(0,0,0,0.5);">
-    <div class="modal-dialog modal-dialog-centered" role="document" (click)="$event.stopPropagation()"
-         style="max-width:90%; margin:auto;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Erfolg</h5>
-          <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Sie haben sich erfolgreich zum Kurs angemeldet.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="closeModal()">OK</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

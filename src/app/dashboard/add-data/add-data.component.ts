@@ -1,17 +1,18 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {StoreService} from '../../shared/store.service';
-import {BackendService} from '../../shared/backend.service';
-import {SharedModule} from "../../shared/shared.module";
-import {MatError, MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {MatInput, MatInputModule} from "@angular/material/input";
-import {MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
-import {MatOption} from '@angular/material/core';
+import { StoreService } from '../../shared/store.service';
+import { BackendService } from '../../shared/backend.service';
+import { SharedModule } from "../../shared/shared.module";
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatError, MatFormFieldModule, MatLabel, MatSuffix} from "@angular/material/form-field";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatInput} from "@angular/material/input";
+import {MatButton} from "@angular/material/button";
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSelect} from "@angular/material/select";
-import {MatCheckbox} from "@angular/material/checkbox";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @Component({
   selector: 'app-add-data',
@@ -22,42 +23,40 @@ import {MatCheckbox} from "@angular/material/checkbox";
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    MatFormField,
     MatFormFieldModule,
-    MatInput,
-    MatInputModule,
+    MatSnackBarModule,
+    MatLabel,
     MatError,
     MatDatepickerToggle,
-    MatDatepickerModule,
-    MatOption,
-    MatSelect,
-    MatCheckbox,
-    MatNativeDateModule
+    MatDatepicker,
+    MatNativeDateModule,
+    MatDatepickerInput,
+    MatInput,
+    MatSuffix,
+    MatButton,
+    MatCheckboxModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 export class AddDataComponent implements OnInit {
   public registrationForm!: FormGroup;
-  public showModal = false;
 
   constructor(
     private formBuilder: FormBuilder,
     public storeService: StoreService,
-    private backendService: BackendService
-  ) {
-  }
-
+    private backendService: BackendService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
       name: ['', Validators.required],
       birthdate: [null, Validators.required],
       courseId: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]], // Email mit Validierung
       newsletter: [false],
     });
   }
-
 
   onSubmit(): void {
     if (this.registrationForm.valid) {
@@ -72,15 +71,16 @@ export class AddDataComponent implements OnInit {
       this.registrationForm.reset({
         name: '',
         birthdate: null,
-        courseID: '',
-        newsletter: false
+        courseId: '',
+        email: '',
+        newsletter: false,
       });
 
-      this.showModal = true;
+      this.snackBar.open('Sie haben sich erfolgreich angemeldet!', 'OK', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        duration: 5000, // Snackbar verschwindet nach 5 Sekunden
+      });
     }
-  }
-
-  closeModal(): void {
-    this.showModal = false;
   }
 }

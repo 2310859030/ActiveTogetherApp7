@@ -7,4 +7,5 @@ export interface Registration {
   course: Course;
   courseId: number;
   registrationDate: string;
+  email: string,
 }
