@@ -46,7 +46,8 @@ export class AddDataComponent implements OnInit {
     public storeService: StoreService,
     private backendService: BackendService,
     private snackBar: MatSnackBar
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
@@ -64,10 +65,6 @@ export class AddDataComponent implements OnInit {
 
       this.backendService.addRegistration(registrationData, this.storeService.currentPage);
 
-      if (registrationData.newsletter) {
-        console.log('Benutzer hat den Newsletter abonniert.');
-      }
-
       this.registrationForm.reset({
         name: '',
         birthdate: null,
@@ -76,6 +73,17 @@ export class AddDataComponent implements OnInit {
         newsletter: false,
       });
 
+      // Steuerelemente in den "untouched" und "pristine"-Status versetzen
+      Object.keys(this.registrationForm.controls).forEach((key) => {
+        const control = this.registrationForm.get(key);
+        if (control) {
+          control.setErrors(null); // Entfernt Validierungsfehler
+          control.markAsPristine(); // Entfernt "dirty"-Status
+          control.markAsUntouched(); // Entfernt "touched"-Status
+        }
+      });
+
+      // Snackbar anzeigen
       this.snackBar.open('Sie haben sich erfolgreich angemeldet!', 'OK', {
         horizontalPosition: 'center',
         verticalPosition: 'top',

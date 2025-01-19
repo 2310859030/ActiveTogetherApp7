@@ -159,6 +159,78 @@
       "newsletter": true,
       "registrationDate": "2025-01-19",
       "id": 128
+    },
+    {
+      "name": "Hannes Hofer",
+      "birthdate": "2025-01-09T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "hannes@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 129
+    },
+    {
+      "name": "Veronika Mayer",
+      "birthdate": "2016-05-08T22:00:00.000Z",
+      "courseId": "_iL775a",
+      "email": "vroni@test.com",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 130
+    },
+    {
+      "name": "Daniel Huch",
+      "birthdate": "2009-04-23T22:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "da@test.de",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 131
+    },
+    {
+      "name": "Sissy Raser",
+      "birthdate": "2017-02-01T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "raser@test.uk",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 132
+    },
+    {
+      "name": "",
+      "birthdate": null,
+      "courseId": "",
+      "email": "",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 133
+    },
+    {
+      "name": "",
+      "birthdate": null,
+      "courseId": "",
+      "email": "",
+      "newsletter": false,
+      "registrationDate": "2025-01-19",
+      "id": 134
+    },
+    {
+      "name": "Georg Gans",
+      "birthdate": "2000-01-09T23:00:00.000Z",
+      "courseId": "_iL775j",
+      "email": "georg@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 135
+    },
+    {
+      "name": "Andrea Drift",
+      "birthdate": "1993-02-17T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "andi@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-19",
+      "id": 136
     }
   ]
 }
