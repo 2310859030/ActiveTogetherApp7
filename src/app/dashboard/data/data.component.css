@@ -11,8 +11,8 @@
   margin-bottom: 20px;
 }
 
-/* Grid-Container */
-.course-grid-container {
+/* Kursübersicht */
+.course-list-container {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -20,8 +20,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
-.header {
+/* Tabellen-Header */
+.course-list-header {
   background-color: darkgreen;
   color: white;
   font-weight: bold;
@@ -29,35 +29,65 @@
   border-bottom: 1px solid #ddd;
 }
 
-.header .col-2 {
+.course-list-header .header-column {
   text-align: center;
 }
 
-/* Datenzeilen */
-.data {
+/* Kurszeilen */
+.course-row {
   padding: 10px 0;
   border-bottom: 1px solid #ddd;
 }
 
-.data:nth-child(even) {
+.course-row:nth-child(even) {
   background-color: lightgoldenrodyellow;
 }
 
-.data:hover {
+.course-row:hover {
   background-color: #e9e9e9;
 }
 
-.data .col-2 {
+.course-row .course-column {
   text-align: center;
 }
 
-/* Terminliste */
-ul {
-  padding-left: 0;
-  list-style: none;
+/* Einzeltermin-Toggle */
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-li {
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/* Einzeltermin-Liste */
+.individual-dates-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 10px 0;
+}
+
+.individual-dates-list li {
   margin: 5px 0;
   font-size: 0.9rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Kollaps-Container */
+.collapse-content {
+  display: none;
+}
+
+.collapse-content.show {
+  display: block;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
 }
