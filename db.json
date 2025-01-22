@@ -4,16 +4,6 @@
       "id": "_iL775j",
       "name": "Schnuppertauchen",
       "instructor": "Maximilian Tiefgang",
-      "dates": [
-        {
-          "begin": "2024-11-13T17:00:00",
-          "end": "2024-11-13T19:00:00"
-        },
-        {
-          "begin": "2024-11-14T17:00:00",
-          "end": "2024-11-14T19:00:00"
-        }
-      ],
       "individualDates": [
         {
           "date": "2024-11-13T17:00:00",
@@ -21,6 +11,14 @@
         },
         {
           "date": "2024-11-14T17:00:00",
+          "duration": "2 hours"
+        },
+        {
+          "date": "2024-11-15T17:00:00",
+          "duration": "2 hours"
+        },
+        {
+          "date": "2024-11-16T17:00:00",
           "duration": "2 hours"
         }
       ],
@@ -30,19 +28,13 @@
       "id": "_iL775i",
       "name": "Reiten",
       "instructor": "Cowboy Tim",
-      "dates": [
-        {
-          "begin": "2024-11-13T17:00:00",
-          "end": "2024-11-13T19:00:00"
-        },
-        {
-          "begin": "2024-11-14T17:00:00",
-          "end": "2024-11-14T19:00:00"
-        }
-      ],
       "individualDates": [
         {
           "date": "2024-11-13T17:00:00",
+          "duration": "2 hours"
+        },
+        {
+          "date": "2024-11-14T17:00:00",
           "duration": "2 hours"
         },
         {
@@ -56,16 +48,6 @@
       "id": "_iL775a",
       "name": "Yoga",
       "instructor": "Manuela Ganzentspannt",
-      "dates": [
-        {
-          "begin": "2024-11-13T17:00:00",
-          "end": "2024-11-13T19:00:00"
-        },
-        {
-          "begin": "2024-11-14T17:00:00",
-          "end": "2024-11-14T19:00:00"
-        }
-      ],
       "individualDates": [
         {
           "date": "2024-11-13T17:00:00",
@@ -227,24 +209,6 @@
       "id": 132
     },
     {
-      "name": "",
-      "birthdate": null,
-      "courseId": "",
-      "email": "",
-      "newsletter": true,
-      "registrationDate": "2025-01-19",
-      "id": 133
-    },
-    {
-      "name": "",
-      "birthdate": null,
-      "courseId": "",
-      "email": "",
-      "newsletter": false,
-      "registrationDate": "2025-01-19",
-      "id": 134
-    },
-    {
       "name": "Georg Gans",
       "birthdate": "2000-01-09T23:00:00.000Z",
       "courseId": "_iL775j",
@@ -270,6 +234,96 @@
       "newsletter": true,
       "registrationDate": "2025-01-21",
       "id": 137
+    },
+    {
+      "name": "Angela Maier",
+      "birthdate": "1954-12-09T23:00:00.000Z",
+      "courseId": "_iL775a",
+      "email": "angela@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 138
+    },
+    {
+      "name": "Helmut Schlöfl",
+      "birthdate": "1952-05-04T23:00:00.000Z",
+      "courseId": "_iL775j",
+      "email": "helmut@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 139
+    },
+    {
+      "name": "Gudrun Sacher",
+      "birthdate": "1993-02-17T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "gudrun@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 143
+    },
+    {
+      "name": "Heinz Ketchup",
+      "birthdate": "2000-07-31T22:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "hein@heinz.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 145
+    },
+    {
+      "name": "Dario Schimek",
+      "birthdate": "1978-12-11T23:00:00.000Z",
+      "courseId": "_iL775j",
+      "email": "dario@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 147
+    },
+    {
+      "name": "Karl Schuster",
+      "birthdate": "1987-12-04T23:00:00.000Z",
+      "courseId": "_iL775j",
+      "email": "karl@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 148
+    },
+    {
+      "name": "Nina Final",
+      "birthdate": "2001-10-09T22:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nina@final.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 149
+    },
+    {
+      "name": "Klaus Pöschl",
+      "birthdate": "2020-01-05T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "klaus@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 150
+    },
+    {
+      "name": "Franz Horn",
+      "birthdate": "2016-02-08T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "franz@test.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-21",
+      "id": 151
+    },
+    {
+      "name": "Nadine Finster",
+      "birthdate": "1982-12-04T23:00:00.000Z",
+      "courseId": "_iL775i",
+      "email": "nadine@finster.at",
+      "newsletter": true,
+      "registrationDate": "2025-01-22",
+      "id": 152
     }
   ]
 }

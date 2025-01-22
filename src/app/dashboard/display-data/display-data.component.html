@@ -4,7 +4,6 @@
       <h2 class="title text-center">Liste der angemeldeten Teilnehmer</h2>
       <div class="table-wrapper">
         <div class="table" matSort (matSortChange)="onSortChange($event)">
-          <!-- Table Header -->
           <div class="table-header">
             <div class="name">Name des Teilnehmers</div>
             <div class="birthdate">Geburtsdatum</div>
@@ -15,7 +14,6 @@
             </div>
             <div class="actions">Teilnahme stornieren</div>
           </div>
-          <!-- Table Rows -->
           <div class="table-row position-relative" *ngFor="let registration of sortedRegistrations">
             <div *ngIf="storeService.loadingRegistrations[registration.id]" class="overlay">
               <mat-spinner diameter="24"></mat-spinner>
@@ -33,25 +31,18 @@
           </div>
         </div>
       </div>
-
-
-      <!-- Pagination -->
       <div class="d-flex justify-content-end mt-4">
         <nav aria-label="Table Pagination">
           <ul class="pagination">
-            <!-- Vorherige Seite -->
             <li class="page-item" [ngClass]="{ disabled: storeService.currentPage === 1 }">
               <a class="page-link" href="#" (click)="selectPage(storeService.currentPage - 1, $event)" aria-label="Vorherige Seite">
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
-
             <li class="page-item" *ngFor="let page of returnAllPages()" [ngClass]="{ active: page === storeService.currentPage }">
-              <a class="page-link" href="#" (click)="selectPage(page, $event)">
-                {{ page }}
+              <a class="page-link" href="#" (click)="selectPage(page, $event)">{{ page }}
               </a>
             </li>
-
             <li class="page-item" [ngClass]="{ disabled: storeService.currentPage === returnAllPages().length }">
               <a class="page-link" href="#" (click)="selectPage(storeService.currentPage + 1, $event)" aria-label="Nächste Seite">
                 <span aria-hidden="true">&raquo;</span>
@@ -60,7 +51,6 @@
           </ul>
         </nav>
       </div>
-
     </div>
   </div>
 </div>

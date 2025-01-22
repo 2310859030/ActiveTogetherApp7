@@ -1,50 +1,48 @@
 .form-container {
-  display: flex; /* Flexbox zur Zentrierung */
-  flex-direction: column; /* Vertikale Anordnung der Inhalte */
-  justify-content: center; /* Inhalte vertikal zentrieren */
-  align-items: center; /* Inhalte horizontal zentrieren */
-  width: 100%; /* Breite der Kurstabelle */
-  margin: 20px auto; /* Zentriert das Formular horizontal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc; /* Grauer Rahmen */
-  border-radius: 10px; /* Abgerundete Ecken */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-  background-color: #f9f9f9; /* Weißer Hintergrund */
-  max-width: 400px; /* Begrenzte Breite */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  max-width: 400px;
 }
 
 .form-container h2 {
-  text-align: center; /* Überschrift zentrieren */
-  margin-bottom: 20px; /* Mehr Abstand unter der Überschrift */
+  text-align: center;
+  margin-bottom: 20px;
   font-size: 1.5rem;
   color: darkgreen;
   font-weight: bold;
 }
 
 .mat-form-field {
-  width: 100%; /* Felder nehmen die volle Breite ein */
-  margin-bottom: 15px; /* Abstand zwischen den Feldern */
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 section {
   width: 100%;
-  margin-bottom: 15px; /* Abstand unter den Sektionen */
+  margin-bottom: 15px;
 }
 
 .mat-checkbox {
-  margin-bottom: 20px; /* Abstand unter der Checkbox */
+  margin-bottom: 20px;
 }
 
 .form-group {
-  margin-top: 20px; /* Abstand oberhalb des Buttons */
+  margin-top: 20px;
 }
 
-
-/* Button-Stil */
 .form-group button {
-  width: 100%; /* Button in voller Breite */
+  width: 100%;
   padding: 10px;
-  background-color: #007bff; /* Blau wie ein typischer Button */
+  background-color: #007bff;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -55,15 +53,14 @@ section {
 }
 
 .form-group button:hover {
-  background-color: green; /* Grüner Hover-Effekt */
+  background-color: green;
 }
 
-/* Deaktivierter Button */
 .form-group button.disabled,
 .form-group button:disabled {
-  background-color: lightgoldenrodyellow; /* Heller Gelbton für deaktivierten Zustand */
-  color: darkgreen; /* Dunkelgrüner Text */
-  border: 2px solid darkgreen; /* Rahmen in Dunkelgrün */
-  cursor: not-allowed; /* Zeigt an, dass der Button nicht klickbar ist */
-  pointer-events: none; /* Verhindert jegliche Interaktion, auch Hover */
+  background-color: lightgoldenrodyellow;
+  color: darkgreen;
+  border: 2px solid darkgreen;
+  cursor: not-allowed;
+  pointer-events: none;
 }

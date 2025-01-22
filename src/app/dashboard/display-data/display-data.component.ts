@@ -24,7 +24,6 @@ export class DisplayDataComponent {
 
   constructor(public storeService: StoreService, private backendService: BackendService) {}
 
-  // Sortierte Registrierungen
   get sortedRegistrations() {
     const registrations = [...this.storeService.registrations];
     if (this.sort?.active === 'registrationDate' && this.sort?.direction) {
@@ -66,7 +65,6 @@ export class DisplayDataComponent {
     return [];
   }
 
-  // Löschen einer Registrierung
   deleteRegistration(registrationId: number): void {
     this.backendService.deleteRegistration(registrationId).subscribe();
   }

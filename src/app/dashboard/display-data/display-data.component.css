@@ -1,4 +1,3 @@
-/* Allgemeiner Container */
 .container {
   margin-top: 20px;
 }
@@ -11,7 +10,6 @@
   margin-bottom: 20px;
 }
 
-/* Tabelle */
 .table-wrapper {
   background-color: #f9f9f9;
   padding: 20px;
@@ -30,48 +28,47 @@
 }
 
 .table-header > div {
-  flex: 1; /* Jede Spalte nimmt gleichmäßig Platz ein */
+  flex: 1;
   text-align: center;
   padding: 5px;
 }
 
 .table-header > .registration-date {
-  background-color: darkgreen; /* Dunkelgrüner Hintergrund */
-  color: white; /* Weißer Text */
+  background-color: darkgreen;
+  color: white;
   text-align: center;
   padding: 5px;
   font-weight: bold;
-  border-radius: 0; /* Entfernt unerwünschte Abrundungen */
+  border-radius: 0;
 }
 
 .table-header > .registration-date .mat-sort-header-container {
-  background-color: darkgreen; /* Sichert den grünen Hintergrund */
-  color: white; /* Weißer Text */
+  background-color: darkgreen;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Deckt die volle Höhe ab */
+  height: 100%;
 }
 
 .table-header > .registration-date .mat-sort-header-button {
-  background-color: darkgreen; /* Dunkelgrün auch für den Sortier-Button */
-  color: white; /* Weißer Text */
-  border: none; /* Entfernt Ränder */
-  padding: 0; /* Verhindert zusätzliche Abstände */
+  background-color: darkgreen;
+  color: white;
+  border: none;
+  padding: 0;
 }
 
 .table-header > .registration-date .mat-sort-header-arrow {
-  color: white; /* Weißer Sortierpfeil */
+  color: white;
 }
 
-/* Zeilen */
 .table-row {
   display: flex;
-  align-items: center; /* Inhalte vertikal ausrichten */
+  align-items: center;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
-  position: relative; /* Wichtig für Spinner und Hintergrund */
-  transition: background-color 0.3s ease; /* Sanfter Farbwechsel */
+  position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .table-row:nth-child(even) {
@@ -82,15 +79,13 @@
   background-color: #e9e9e9;
 }
 
-/* Ladezustand */
 .table-row.loading {
-  background-color: rgba(200, 200, 200, 0.5); /* Halbtransparentes Grau */
-  pointer-events: none; /* Interaktion deaktivieren */
+  background-color: rgba(200, 200, 200, 0.5);
+  pointer-events: none;
 }
 
-/* Spalten innerhalb einer Zeile */
 .table-row > div {
-  flex: 1; /* Jede Spalte nimmt gleichmäßig Platz ein */
+  flex: 1;
   text-align: center;
   padding: 5px;
 }
@@ -101,10 +96,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px; /* Abstand zwischen Text und Icon */
+  gap: 5px;
 }
 
-/* Button-Styling */
 .delete-button {
   background-color: #007bff;
   color: white;
@@ -115,32 +109,32 @@
   cursor: pointer;
   position: relative;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-right: 10px; /* Platz für Spinner */
+  margin-right: 10px;
 }
 
 .delete-button:disabled {
-  background-color: lightgrey; /* Ausgegraut */
+  background-color: lightgrey;
   cursor: not-allowed;
 }
 
 .delete-button:hover:enabled {
   background-color: darkgreen;
   color: white;
-  transform: scale(1.05); /* Leichter Zoom beim Hover */
+  transform: scale(1.05);
 }
 
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Passt sich der Breite der Zeile an */
-  height: 100%; /* Passt sich genau der Zeilenhöhe an */
-  background-color: rgba(255, 255, 255, 0.8); /* Halbtransparentes Weiß */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
-  justify-content: center; /* Zentriere Spinner horizontal */
-  align-items: center; /* Zentriere Spinner vertikal */
-  z-index: 1; /* Sicherstellen, dass es über der Zeile liegt */
-  pointer-events: none; /* Keine Interaktionen möglich */
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .mat-sort-header {
@@ -152,7 +146,6 @@
   margin-left: 5px;
 }
 
-/* Pagination */
 .pagination {
   margin: 0;
 }
@@ -184,7 +177,6 @@
   color: white;
 }
 
-/* Responsives Design */
 @media (max-width: 767px) {
   .table-wrapper {
     padding: 15px;
@@ -192,21 +184,21 @@
 
   .table-header,
   .table-row {
-    flex-direction: column; /* Zeilen werden untereinander gestapelt */
+    flex-direction: column;
   }
 
   .table-header > div,
   .table-row > div {
-    text-align: left; /* Inhalt linksbündig ausrichten */
+    text-align: left;
     padding: 8px 0;
   }
 
   .delete-button {
-    width: 100%; /* Buttons füllen die Breite aus */
-    margin-right: 0; /* Kein Platz für Spinner */
+    width: 100%;
+    margin-right: 0;
   }
 
   .actions {
-    justify-content: space-between; /* Abstand zwischen Button und Spinner */
+    justify-content: space-between;
   }
 }

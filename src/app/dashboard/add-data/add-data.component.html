@@ -1,7 +1,6 @@
 <div class="form-container">
   <h2>Zum Kurs anmelden!</h2>
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput id="name" formControlName="name" />
@@ -9,7 +8,6 @@
         Bitte Name eintragen.
       </mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <mat-label>Geburtsdatum</mat-label>
       <input matInput id="birthdate" [matDatepicker]="picker" formControlName="birthdate" />
@@ -19,7 +17,6 @@
         Bitte Geburtsdatum auswählen.
       </mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <mat-label>Kurs auswählen</mat-label>
       <select matNativeControl formControlName="courseId" required>
@@ -30,7 +27,6 @@
         Bitte Kurs auswählen.
       </mat-error>
     </mat-form-field>
-
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput id="email" formControlName="email" />
@@ -41,13 +37,11 @@
         Bitte eine gültige Email-Adresse eingeben.
       </mat-error>
     </mat-form-field>
-
     <section>
       <mat-checkbox formControlName="newsletter">
         Ich möchte den Newsletter mit neuen Kursangeboten erhalten.
       </mat-checkbox>
     </section>
-
     <section>
       <div class="form-group">
         <button mat-flat-button color="primary" type="submit" [disabled]="registrationForm.invalid">

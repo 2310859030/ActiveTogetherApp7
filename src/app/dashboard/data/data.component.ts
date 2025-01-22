@@ -12,12 +12,11 @@ import { StoreService } from '../../shared/store.service';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent {
-  // Speichert den aktuell expandierten Kurs
+
   public expandedCourseId: string | null = null;
 
   constructor(public storeService: StoreService) {}
 
-  // Methode zum Umschalten des Toggles
   toggleCourse(courseId: string): void {
     this.expandedCourseId = this.expandedCourseId === courseId ? null : courseId;
   }

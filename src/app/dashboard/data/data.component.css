@@ -1,4 +1,3 @@
-/* Allgemeiner Container */
 .container {
   margin-top: 20px;
 }
@@ -11,7 +10,6 @@
   margin-bottom: 20px;
 }
 
-/* Kursübersicht */
 .course-list-container {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
@@ -20,7 +18,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Tabellen-Header */
 .course-list-header {
   background-color: darkgreen;
   color: white;
@@ -33,7 +30,6 @@
   text-align: center;
 }
 
-/* Kurszeilen */
 .course-row {
   padding: 10px 0;
   border-bottom: 1px solid #ddd;
@@ -51,7 +47,6 @@
   text-align: center;
 }
 
-/* Einzeltermin-Toggle */
 .toggle-button {
   background-color: #007bff;
   color: white;
@@ -63,10 +58,9 @@
 }
 
 .toggle-button:hover {
-  background-color: #0056b3;
+  background-color: darkgreen;
 }
 
-/* Einzeltermin-Liste */
 .individual-dates-list {
   padding-left: 0;
   list-style: none;
@@ -80,7 +74,6 @@
   padding-bottom: 5px;
 }
 
-/* Kollaps-Container */
 .collapse-content {
   display: none;
 }

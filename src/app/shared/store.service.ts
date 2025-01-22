@@ -16,10 +16,8 @@ export class StoreService {
   public coursesLoading = true;
   public registrationLoading = true;
 
-  // Neu: Ladezustände für Registrierungen
   public loadingRegistrations: { [key: number]: boolean } = {};
 
-  // Methode, um den Ladezustand zu setzen
   setLoading(registrationId: number, isLoading: boolean): void {
     if (isLoading) {
       this.loadingRegistrations[registrationId] = true;

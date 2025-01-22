@@ -1,17 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { StoreService } from '../../shared/store.service';
-import { BackendService } from '../../shared/backend.service';
-import { SharedModule } from "../../shared/shared.module";
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+import {StoreService} from '../../shared/store.service';
+import {BackendService} from '../../shared/backend.service';
+import {SharedModule} from "../../shared/shared.module";
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatError, MatFormFieldModule, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @Component({
@@ -46,16 +46,17 @@ export class AddDataComponent implements OnInit {
     public storeService: StoreService,
     private backendService: BackendService,
     private snackBar: MatSnackBar
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
       name: ['', Validators.required],
       birthdate: [null, Validators.required],
       courseId: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]], // Email mit Validierung
+      email: ['', [Validators.required, Validators.email]],
       newsletter: [false],
+    });
+    this.registrationForm.valueChanges.subscribe(() => {
     });
   }
 
@@ -65,30 +66,23 @@ export class AddDataComponent implements OnInit {
 
       this.backendService.addRegistration(registrationData, this.storeService.currentPage);
 
-      this.registrationForm.reset({
-        name: '',
-        birthdate: null,
-        courseId: '',
-        email: '',
-        newsletter: false,
-      });
+      this.resetForm();
 
-      // Steuerelemente in den "untouched" und "pristine"-Status versetzen
-      Object.keys(this.registrationForm.controls).forEach((key) => {
-        const control = this.registrationForm.get(key);
-        if (control) {
-          control.setErrors(null); // Entfernt Validierungsfehler
-          control.markAsPristine(); // Entfernt "dirty"-Status
-          control.markAsUntouched(); // Entfernt "touched"-Status
-        }
-      });
-
-      // Snackbar anzeigen
       this.snackBar.open('Sie haben sich erfolgreich angemeldet!', 'OK', {
         horizontalPosition: 'center',
         verticalPosition: 'top',
-        duration: 5000, // Snackbar verschwindet nach 5 Sekunden
+        duration: 5000,
       });
     }
+  }
+
+  resetForm(): void {
+    this.registrationForm.reset({
+      name: '',
+      birthdate: null,
+      courseId: '',
+      email: '',
+      newsletter: false,
+    });
   }
 }

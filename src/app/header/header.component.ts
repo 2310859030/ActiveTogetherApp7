@@ -1,15 +1,29 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule} from "@angular/material/button";
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [RouterModule, MatButtonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'],
+  imports: [
+    RouterLink,
+    MatMenu,
+    MatMenuTrigger,
+    MatButton,
+    MatMenuItem,
+    RouterLinkActive
+  ],
+  standalone: true
 })
 export class HeaderComponent {
   public title: string = 'Stay Active, Stay Together';
-  public imagePath: string = "./../assets/images/sport.jpeg";
+  public imagePath: string = './../assets/images/sport.jpeg';
+
+  constructor(private router: Router) {}
+
+  isActive(path: string): boolean {
+    return this.router.url === path;
+  }
 }

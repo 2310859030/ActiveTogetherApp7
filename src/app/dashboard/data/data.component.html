@@ -3,7 +3,6 @@
     <div class="col-12 col-md-10">
       <h2 class="title">Verfügbare Kurse</h2>
       <div class="course-list-container">
-        <!-- Header -->
         <div class="row course-list-header">
           <div class="col-2 header-column">Kurs</div>
           <div class="col-2 header-column">Veranstaltungsort</div>
@@ -12,42 +11,19 @@
           <div class="col-2 header-column">Kursleiter</div>
           <div class="col-2 header-column">Alle Termine</div>
         </div>
-
-        <!-- Data Rows -->
-        <div
-          class="row course-row"
-          *ngFor="let course of storeService.courses"
-        >
+        <div class="row course-row" *ngFor="let course of storeService.courses">
           <div class="col-2 course-column">{{ course.name }}</div>
           <div class="col-2 course-column">{{ course.eventLocation.name }}</div>
           <div class="col-2 course-column">{{ course.eventLocation.address }}</div>
           <div class="col-2 course-column">{{ course.eventLocation.venueByPublicTansport ? "Ja" : "Nein" }}</div>
           <div class="col-2 course-column">{{ course.instructor }}</div>
           <div class="col-2 course-column">
-            <!-- Toggle Button -->
-            <button
-              type="button"
-              class="toggle-button"
-              (click)="toggleCourse(course.id)"
-              [attr.aria-expanded]="expandedCourseId === course.id"
-              [attr.aria-controls]="'collapse' + course.id"
-            >
+            <button type="button" class="toggle-button" (click)="toggleCourse(course.id)" [attr.aria-expanded]="expandedCourseId === course.id" [attr.aria-controls]="'collapse' + course.id">
               Einzeltermine anzeigen
             </button>
-
-            <!-- Einzeltermine -->
-            <div
-              [id]="'collapse' + course.id"
-              class="collapse-content"
-              [class.show]="expandedCourseId === course.id"
-            >
-              <ul
-                class="individual-dates-list"
-                *ngIf="course.individualDates && course.individualDates.length > 0"
-              >
-                <li *ngFor="let termin of course.individualDates">
-                  <span>{{ termin.date | date: 'dd.MM.yyyy HH:mm' }}</span>
-                  Dauer: <span>{{ termin.duration }}</span>
+            <div [id]="'collapse' + course.id" class="collapse-content" [class.show]="expandedCourseId === course.id">
+              <ul class="individual-dates-list" *ngIf="course.individualDates && course.individualDates.length > 0">
+                <li *ngFor="let termin of course.individualDates"><span>{{ termin.date | date: 'dd.MM.yyyy HH:mm' }}</span>Dauer: <span>{{ termin.duration }}</span>
                 </li>
               </ul>
               <p *ngIf="!course.individualDates || course.individualDates.length === 0">

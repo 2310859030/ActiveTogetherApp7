@@ -1,58 +1,46 @@
 .header-container {
-  background-color: black; /* Schwarzer Hintergrund */
-  width: 100%; /* Volle Bildschirmbreite */
+  background-color: black;
+  width: 100%;
   text-align: center;
-  padding: 20px 0 0 0; /* Abstand nur nach oben */
+  padding: 20px 0 0 0;
 }
 
 .header-title {
   color: white;
   font-size: 2rem;
   font-weight: bold;
-  padding-bottom: 20px; /* Abstand zum oberen Rand des Bildes */
+  padding-bottom: 20px;
 }
 
 .header-image {
-  background-size: cover; /* Bild wird skaliert */
-  background-position: center; /* Zentriert den sichtbaren Bereich */
-  height: 300px; /* Höhe des sichtbaren Bereichs */
-  width: 100%; /* Volle Breite */
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
 }
 
 .nav-links {
-  display: flex; /* Flexbox für Zentrierung */
-  justify-content: center; /* Horizontale Zentrierung */
-  padding: 20px 0; /* Gleicher Abstand oben und unten */
-  background-color: black; /* Hintergrundfarbe für den Bereich */
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: black;
 }
 
-/* Material Button Anpassungen */
-button[mat-flat-button] {
-  font-size: 1.2rem; /* Größere Schriftgröße */
-  font-weight: bold;
-  text-transform: none; /* Deaktiviert Großbuchstaben */
+.menu-button {
+  font-size: 1.5rem;
   color: white;
-  background-color: #007bff; /* Blaue Standardfarbe */
-  padding: 10px 20px; /* Mehr Innenabstand für größere Buttons */
-  min-width: 150px; /* Gleiche Mindestbreite für beide Buttons */
-  height: 50px; /* Gleiche Höhe für beide Buttons */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: flex; /* Flexbox für bessere Zentrierung */
-  align-items: center; /* Vertikale Zentrierung */
-  justify-content: center; /* Horizontale Zentrierung */
+  background-color: #007bff;
+  padding: 20px 20px;
+  border-radius: 4px;
 }
 
-button[mat-flat-button]:hover:not(.active-button) {
-  background-color: darkgreen; /* Hover-Farbe wie Teilnehmerliste */
+.menu-button:hover {
+  background-color: darkgreen;
   color: white;
 }
 
-/* Aktiver Button (RouterLinkActive) */
-button.active-button {
-  background-color: lightgoldenrodyellow; /* Gleiche Farbe wie aktive Seitenanzahl */
+.active-menu-item {
+  background-color: lightgoldenrodyellow;
   color: darkgreen;
-  border: 2px solid darkgreen; /* Grüne Umrandung */
-  min-width: 150px; /* Gleiche Mindestbreite */
-  height: 50px; /* Gleiche Höhe */
-  cursor: default;
+  pointer-events: none; /* Deaktiviert Klicks */
 }
